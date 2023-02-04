@@ -68,10 +68,10 @@ Jak definiuje się własność Markowa procesu stochastycznego?
 \end{pytanie}
 \begin{odpowiedź}
     Proces stochastyczny $X$ jest procesem Markowa, jeśli \[
-    \mathbb{P}(X_{n+1}=x_{x+1}\mid X_n=x_n,\ldots ,X_0=x_0)\\
+    \mathbb{P}(X_{n+1}=x_{n+1}\mid X_n=x_n,\ldots ,X_0=x_0)\\
     = \mathbb{P}(X_{n+1}=x_{n+1}\mid X_n=x_n),
     \]
-    Gdzie $n \in N$ i $x_0, x_1, \ldots, x_{n+1} \in S$.\\
+    Gdzie $n \in \mathbb{N}$ i $x_0, x_1, \ldots, x_{n+1} \in S$.\\
     \underline{Nieważne jak gdzieś dotarliśmy, ważne, że tam jesteśmy.}
 \end{odpowiedź}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -82,10 +82,10 @@ Jak definiuje się własność Markowa procesu stochastycznego?
 Jakie postulaty spełnia macierz przejścia łańcucha Markowa?
 \end{pytanie}
 \begin{odpowiedź}
-    Stochastyczna macierz przejścia: $P = [p(x,y)]_{x, y\in s}$\\
+    Stochastyczna macierz przejścia: $P = [p(x,y)]_{x, y\in S}$\\
     Własności:
     \begin{enumerate}
-        \item $p(x, y) > 0, \quad \forall (x, y) \in S$
+        \item $p(x, y) \geq 0, \quad \forall x, y \in S$
         \item $\sum_{y} p(x, y) = 1, \quad \forall x \in S$
     \end{enumerate}
 \end{odpowiedź}
@@ -130,7 +130,7 @@ Jak definiujemy okres łańcucha Markowa?
 Co to jest rozkład stacjonarny dla łańcucha Markowa?
 \end{pytanie}
 \begin{odpowiedź}
-    Rozkład prawdopodobieństwa $\mu = (\mu (x) : x\in s)$
+    Rozkład prawdopodobieństwa $\mu = (\mu (\{x\}) : x\in S)$
     nazywamy rozkładem stacjonarnym macierzy przejścia $\mathbb{P}$,
     gdy $\mu \mathbb{P} = \mu$.
 \end{odpowiedź}
@@ -163,9 +163,9 @@ Jak definiujemy czas trafienia łańcucha Markowa w ustalony punkt?
 \end{pytanie}
 \begin{odpowiedź}
     Niech $S$-przeliczalny zbiór stanów i $A\subseteq S$.
-    Definiujemy $T_A=\inf{n\in \mathbb{N} : X_n\in A\}$,
+    Definiujemy $T_A=\inf\{n\in \mathbb{N} : X_n\in A\}$,
     gdzie $\inf{\emptyset} = \infty$.\\
-    Oznaczenie: $T_{(\{y\})} = T_y$.
+    Oznaczenie: $T_{\{y\}} = T_y$.
 \end{odpowiedź}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
@@ -176,8 +176,8 @@ Co oznacza tranzytywność i rekurencyjność łańcucha Markowa o przeliczalnym
 \end{pytanie}
 \begin{odpowiedź}
     Stan $x$ nazywamy powracającym (rekurencyjnym),
-    gdy $\rho_{x,y} = 1$,
-    a chwilowym (tranzytywnym), jeżeli $\rho_{x,y} < 1$.
+    gdy $\rho_{x,x} = 1$,
+    a chwilowym (tranzytywnym), jeżeli $\rho_{x,x} < 1$.
 \end{odpowiedź}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
