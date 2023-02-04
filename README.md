@@ -26,9 +26,9 @@ index 2e6a112..c631bc1 100644
  \end{pytanie}
  \begin{odpowiedź}
 -    % tu zamieść odpowiedź
-+    To jest odpowiedź na pytanie powyżej.^M
-+    Tu jest druga linijka.^M
-+    Tu jest trzecia.^M
++    To jest odpowiedź na pytanie powyżej.
++    Tu jest druga linijka.
++    Tu jest trzecia.
  \end{odpowiedź}
  %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
@@ -45,9 +45,9 @@ index 2e6a112..c631bc1 100644
  \end{pytanie}
  \begin{odpowiedź}
 -    % tu zamieść odpowiedź
-+    To jest odpowiedź na pytanie powyżej.^M
-+    Tu jest druga linijka.^M
-+    Tu jest trzecia.^M
++    To jest odpowiedź na pytanie powyżej.
++    Tu jest druga linijka.
++    Tu jest trzecia.
  \end{odpowiedź}
  %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
