@@ -15,7 +15,7 @@
 {\em}{}%
 {\newline}{}%
 \theoremstyle{plain}
-\newtheorem{pytanie}{Pytanie} 
+\newtheorem{pytanie}{Pytanie}
 \theoremstyle{break}
 \newtheorem*{odpowiedź}{Odpowiedź}
 
@@ -40,12 +40,12 @@
 \begin{pytanie}
 Co to jest proces stochastyczny?
 \end{pytanie}
-\begin{odpowiedź} 
+\begin{odpowiedź}
     Proces stochastyczny to rodzina zmiennych losowych $(X_t)_{t\in I}$
     (gdzie $I$ jest pewnym zbiorem indeksów), określonych na wspólnej
     przestrzeni probabilistycznej. To znaczy \[
     \forall t \in I \quad X_t : \Omega \to \mathbb{R}
-    \] 
+    \]
     Gdzie $(\Omega, \mathcal{F}, \mathbb{P})$ jest pewną ustaloną przestrzenią
     probabilistyczną.
 \end{odpowiedź}
@@ -56,7 +56,7 @@ Co to jest proces stochastyczny?
 \begin{pytanie}
 Co to jest rozkład wielowymiarowy procesu stochastycznego?
 \end{pytanie}
-\begin{odpowiedź} 
+\begin{odpowiedź}
     % tu zamieść odpowiedź
 \end{odpowiedź}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -85,8 +85,8 @@ Jakie postulaty spełnia macierz przejścia łańcucha Markowa?
     Stochastyczna macierz przejścia: $P = [p(x,y)]_{x, y\in s}$\\
     Własności:
     \begin{enumerate}
-        \item $p(x, y) > 0 \forall (x, y) \in S$
-        \item $\sum_{y} p(x, y) = 1 \forall x \in S$
+        \item $p(x, y) > 0, \quad \forall (x, y) \in S$
+        \item $\sum_{y} p(x, y) = 1, \quad \forall x \in S$
     \end{enumerate}
 \end{odpowiedź}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -130,9 +130,9 @@ Jak definiujemy okres łańcucha Markowa?
 Co to jest rozkład stacjonarny dla łańcucha Markowa?
 \end{pytanie}
 \begin{odpowiedź}
-    Rozkład prawdopodobieństwa $\mi = (\mi (x) : x \in s)$
+    Rozkład prawdopodobieństwa $\mu = (\mu (x) : x\in s)$
     nazywamy rozkładem stacjonarnym macierzy przejścia $\mathbb{P}$,
-    gdy $\mi \mathbb{P} = \mi$.
+    gdy $\mu \mathbb{P} = \mu$.
 \end{odpowiedź}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
@@ -151,7 +151,7 @@ Co to znaczy, że łańcuch Markowa jest nieokresowy?
 \begin{pytanie}
 Proszę sformułować twierdzenie o zbieżności łańcuchów Markowa ze skończoną przestrzenią stanów.
 \end{pytanie}
-\begin{odpowiedź} 
+\begin{odpowiedź}
     % tu zamieść odpowiedź
 \end{odpowiedź}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -161,8 +161,11 @@ Proszę sformułować twierdzenie o zbieżności łańcuchów Markowa ze skończ
 \begin{pytanie}
 Jak definiujemy czas trafienia łańcucha Markowa w ustalony punkt?
 \end{pytanie}
-\begin{odpowiedź} 
-    % tu zamieść odpowiedź
+\begin{odpowiedź}
+    Niech $S$-przeliczalny zbiór stanów i $A\subseteq S$.
+    Definiujemy $T_A=\inf{n\in \mathbb{N} : X_n\in A\}$,
+    gdzie $\inf{\emptyset} = \infty$.\\
+    Oznaczenie: $T_{(\{y\})} = T_y$.
 \end{odpowiedź}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
@@ -171,8 +174,10 @@ Jak definiujemy czas trafienia łańcucha Markowa w ustalony punkt?
 \begin{pytanie}
 Co oznacza tranzytywność i rekurencyjność łańcucha Markowa o przeliczalnym zbiorze stanów?
 \end{pytanie}
-\begin{odpowiedź} 
-    % tu zamieść odpowiedź
+\begin{odpowiedź}
+    Stan $x$ nazywamy powracającym (rekurencyjnym),
+    gdy $\rho_{x,y} = 1$,
+    a chwilowym (tranzytywnym), jeżeli $\rho_{x,y} < 1$.
 \end{odpowiedź}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
@@ -181,7 +186,7 @@ Co oznacza tranzytywność i rekurencyjność łańcucha Markowa o przeliczalnym
 \begin{pytanie}
 Jak definiujemy generator macierzy przejścia z czasem ciągłym?
 \end{pytanie}
-\begin{odpowiedź} 
+\begin{odpowiedź}
     % tu zamieść odpowiedź
 \end{odpowiedź}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -191,7 +196,7 @@ Jak definiujemy generator macierzy przejścia z czasem ciągłym?
 \begin{pytanie}
 Jakie postulaty spełnia generator macierzy przejścia z czasem ciągłym?
 \end{pytanie}
-\begin{odpowiedź} 
+\begin{odpowiedź}
     % tu zamieść odpowiedź
 \end{odpowiedź}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -201,7 +206,7 @@ Jakie postulaty spełnia generator macierzy przejścia z czasem ciągłym?
 \begin{pytanie}
 Jakie równanie różniczkowe spełnia macierz stochastyczna z czasem ciągłym?
 \end{pytanie}
-\begin{odpowiedź} 
+\begin{odpowiedź}
     % tu zamieść odpowiedź
 \end{odpowiedź}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -211,7 +216,7 @@ Jakie równanie różniczkowe spełnia macierz stochastyczna z czasem ciągłym?
 \begin{pytanie}
 W jaki sposób opisujemy czysty proces urodzin?
 \end{pytanie}
-\begin{odpowiedź} 
+\begin{odpowiedź}
     % tu zamieść odpowiedź
 \end{odpowiedź}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -221,7 +226,7 @@ W jaki sposób opisujemy czysty proces urodzin?
 \begin{pytanie}
 Co oznacza eksplozja demograficzna dla czystego procesu urodzin?
 \end{pytanie}
-\begin{odpowiedź} 
+\begin{odpowiedź}
     % tu zamieść odpowiedź
 \end{odpowiedź}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -231,7 +236,7 @@ Co oznacza eksplozja demograficzna dla czystego procesu urodzin?
 \begin{pytanie}
 Proszę sformułować twierdzenie o braku eksplozji dla czystego procesu urodzin.
 \end{pytanie}
-\begin{odpowiedź} 
+\begin{odpowiedź}
     % tu zamieść odpowiedź
 \end{odpowiedź}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -241,7 +246,7 @@ Proszę sformułować twierdzenie o braku eksplozji dla czystego procesu urodzin
 \begin{pytanie}
 Proszę podać postulaty procesu Poissona.
 \end{pytanie}
-\begin{odpowiedź} 
+\begin{odpowiedź}
     % tu zamieść odpowiedź
 \end{odpowiedź}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -251,7 +256,7 @@ Proszę podać postulaty procesu Poissona.
 \begin{pytanie}
 Co onacza niezależność przyrostów procesu stochastycznego?
 \end{pytanie}
-\begin{odpowiedź} 
+\begin{odpowiedź}
     % tu zamieść odpowiedź
 \end{odpowiedź}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -261,7 +266,7 @@ Co onacza niezależność przyrostów procesu stochastycznego?
 \begin{pytanie}
 Jak definiujemy funkcję charakterystyczną, funkcję tworzącą momenty i transformatę Laplace'a zmiennej losowej?
 \end{pytanie}
-\begin{odpowiedź} 
+\begin{odpowiedź}
     % tu zamieść odpowiedź
 \end{odpowiedź}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -271,7 +276,7 @@ Jak definiujemy funkcję charakterystyczną, funkcję tworzącą momenty i trans
 \begin{pytanie}
 Czy zna Pani/Pan jakąś konstrukcję procesu Poissona? Proszę o niej opowiedzieć.
 \end{pytanie}
-\begin{odpowiedź} 
+\begin{odpowiedź}
     % tu zamieść odpowiedź
 \end{odpowiedź}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -281,7 +286,7 @@ Czy zna Pani/Pan jakąś konstrukcję procesu Poissona? Proszę o niej opowiedzi
 \begin{pytanie}
 Proszę podać rozkłady jednowymiarowe procesu Poissona.
 \end{pytanie}
-\begin{odpowiedź} 
+\begin{odpowiedź}
     % tu zamieść odpowiedź
 \end{odpowiedź}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -291,7 +296,7 @@ Proszę podać rozkłady jednowymiarowe procesu Poissona.
 \begin{pytanie}
 Proszę podać funkcję charakterystyczną rozkładu jednowymiarowego procesu Poissona.
 \end{pytanie}
-\begin{odpowiedź} 
+\begin{odpowiedź}
     % tu zamieść odpowiedź
 \end{odpowiedź}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -301,7 +306,7 @@ Proszę podać funkcję charakterystyczną rozkładu jednowymiarowego procesu Po
 \begin{pytanie}
 Jakie postulaty spełnia prawdopodobieństwo przejścia?
 \end{pytanie}
-\begin{odpowiedź} 
+\begin{odpowiedź}
     % tu zamieść odpowiedź
 \end{odpowiedź}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -311,8 +316,10 @@ Jakie postulaty spełnia prawdopodobieństwo przejścia?
 \begin{pytanie}
 Co to znaczy, że prawdopodobieństwo przejścia jest jednorodne w czasie?
 \end{pytanie}
-\begin{odpowiedź} 
-    % tu zamieść odpowiedź
+\begin{odpowiedź}
+    Prawdopodobieństwo przejścia jest jednorodne w czasie,
+    gdy $T=\mathbb{R}$ oraz
+    \[p_{s, t} (x,A) = p_{0, t-s} (x,A)\]
 \end{odpowiedź}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
@@ -321,7 +328,7 @@ Co to znaczy, że prawdopodobieństwo przejścia jest jednorodne w czasie?
 \begin{pytanie}
 Co to znaczy, że prawdopodobieństwo przejścia jest jednorodne w przestrzeni?
 \end{pytanie}
-\begin{odpowiedź} 
+\begin{odpowiedź}
     % tu zamieść odpowiedź
 \end{odpowiedź}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -331,7 +338,7 @@ Co to znaczy, że prawdopodobieństwo przejścia jest jednorodne w przestrzeni?
 \begin{pytanie}
 Proszę podać prawdopodobieństwo przejścia procesu Poissona.
 \end{pytanie}
-\begin{odpowiedź} 
+\begin{odpowiedź}
     % tu zamieść odpowiedź
 \end{odpowiedź}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -341,7 +348,7 @@ Proszę podać prawdopodobieństwo przejścia procesu Poissona.
 \begin{pytanie}
 Co to jest trajektoria procesu stochastycznego?
 \end{pytanie}
-\begin{odpowiedź} 
+\begin{odpowiedź}
     % tu zamieść odpowiedź
 \end{odpowiedź}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -351,8 +358,9 @@ Co to jest trajektoria procesu stochastycznego?
 \begin{pytanie}
 Co to znaczy, że trajektorie procesu są cadlag?
 \end{pytanie}
-\begin{odpowiedź} 
-    % tu zamieść odpowiedź
+\begin{odpowiedź}
+    càdlàg – prawostronnie ciągłe z lewostronnymi granicami
+    (continue a droite, limit a gauche)
 \end{odpowiedź}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
@@ -361,7 +369,7 @@ Co to znaczy, że trajektorie procesu są cadlag?
 \begin{pytanie}
 Co oznacza ciągłość stochastyczna procesu? Czy proces Poissona jest stochastycznie ciągły?
 \end{pytanie}
-\begin{odpowiedź} 
+\begin{odpowiedź}
     % tu zamieść odpowiedź
 \end{odpowiedź}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -371,7 +379,7 @@ Co oznacza ciągłość stochastyczna procesu? Czy proces Poissona jest stochast
 \begin{pytanie}
 Proszę podać postulaty procesu Wienera.
 \end{pytanie}
-\begin{odpowiedź} 
+\begin{odpowiedź}
     % tu zamieść odpowiedź
 \end{odpowiedź}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -381,7 +389,7 @@ Proszę podać postulaty procesu Wienera.
 \begin{pytanie}
 Proszę podać rozkłady jednowymiarowe procesu Wienera.
 \end{pytanie}
-\begin{odpowiedź} 
+\begin{odpowiedź}
     % tu zamieść odpowiedź
 \end{odpowiedź}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -391,7 +399,7 @@ Proszę podać rozkłady jednowymiarowe procesu Wienera.
 \begin{pytanie}
 Proszę podać prawdopodobieństwo przejścia procesu Wienera.
 \end{pytanie}
-\begin{odpowiedź} 
+\begin{odpowiedź}
     % tu zamieść odpowiedź
 \end{odpowiedź}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -401,7 +409,7 @@ Proszę podać prawdopodobieństwo przejścia procesu Wienera.
 \begin{pytanie}
 Jak definiujemy warunek Hoeldera ciągłości funkcji? Czy trajektorie Procesu Wienera spełniają ten warunek?
 \end{pytanie}
-\begin{odpowiedź} 
+\begin{odpowiedź}
     % tu zamieść odpowiedź
 \end{odpowiedź}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -411,7 +419,7 @@ Jak definiujemy warunek Hoeldera ciągłości funkcji? Czy trajektorie Procesu W
 \begin{pytanie}
 Jak definiujemy odwrotkę procesu Wienera?
 \end{pytanie}
-\begin{odpowiedź} 
+\begin{odpowiedź}
     % tu zamieść odpowiedź
 \end{odpowiedź}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -421,7 +429,7 @@ Jak definiujemy odwrotkę procesu Wienera?
 \begin{pytanie}
 Proszę sformułować prawo iterowanego logarytmu.
 \end{pytanie}
-\begin{odpowiedź} 
+\begin{odpowiedź}
     % tu zamieść odpowiedź
 \end{odpowiedź}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -431,7 +439,7 @@ Proszę sformułować prawo iterowanego logarytmu.
 \begin{pytanie}
 Co to jest filtracja?
 \end{pytanie}
-\begin{odpowiedź} 
+\begin{odpowiedź}
     % tu zamieść odpowiedź
 \end{odpowiedź}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -441,7 +449,7 @@ Co to jest filtracja?
 \begin{pytanie}
 Proszę sformułować prawo 0-1 Blumenthala dla procesu Wienera.
 \end{pytanie}
-\begin{odpowiedź} 
+\begin{odpowiedź}
     % tu zamieść odpowiedź
 \end{odpowiedź}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -451,7 +459,7 @@ Proszę sformułować prawo 0-1 Blumenthala dla procesu Wienera.
 \begin{pytanie}
 Co to jest martyngał?
 \end{pytanie}
-\begin{odpowiedź} 
+\begin{odpowiedź}
     % tu zamieść odpowiedź
 \end{odpowiedź}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -461,7 +469,7 @@ Co to jest martyngał?
 \begin{pytanie}
 Proszę podać przykład martyngału.
 \end{pytanie}
-\begin{odpowiedź} 
+\begin{odpowiedź}
     % tu zamieść odpowiedź
 \end{odpowiedź}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -471,7 +479,7 @@ Proszę podać przykład martyngału.
 \begin{pytanie}
 Co to jest nadmartyngał?
 \end{pytanie}
-\begin{odpowiedź} 
+\begin{odpowiedź}
     % tu zamieść odpowiedź
 \end{odpowiedź}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -481,7 +489,7 @@ Co to jest nadmartyngał?
 \begin{pytanie}
 Proszę podać przykład nadmartyngału, który nie jest martyngałem.
 \end{pytanie}
-\begin{odpowiedź} 
+\begin{odpowiedź}
     % tu zamieść odpowiedź
 \end{odpowiedź}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -491,7 +499,7 @@ Proszę podać przykład nadmartyngału, który nie jest martyngałem.
 \begin{pytanie}
 Co to jest podmartyngał?
 \end{pytanie}
-\begin{odpowiedź} 
+\begin{odpowiedź}
     % tu zamieść odpowiedź
 \end{odpowiedź}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -501,7 +509,7 @@ Co to jest podmartyngał?
 \begin{pytanie}
 Proszę sformułować nierówność Jensena dla warunkowych wartości oczekiwanych.
 \end{pytanie}
-\begin{odpowiedź} 
+\begin{odpowiedź}
     % tu zamieść odpowiedź
 \end{odpowiedź}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -511,7 +519,7 @@ Proszę sformułować nierówność Jensena dla warunkowych wartości oczekiwany
 \begin{pytanie}
 Jak definiujemy czas stopu?
 \end{pytanie}
-\begin{odpowiedź} 
+\begin{odpowiedź}
     % tu zamieść odpowiedź
 \end{odpowiedź}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -521,7 +529,7 @@ Jak definiujemy czas stopu?
 \begin{pytanie}
 Proszę sformułować twierdzenie Dooba o stopowaniu.
 \end{pytanie}
-\begin{odpowiedź} 
+\begin{odpowiedź}
     % tu zamieść odpowiedź
 \end{odpowiedź}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -531,7 +539,7 @@ Proszę sformułować twierdzenie Dooba o stopowaniu.
 \begin{pytanie}
 Proszę sformułować tożsamość Walda.
 \end{pytanie}
-\begin{odpowiedź} 
+\begin{odpowiedź}
     % tu zamieść odpowiedź
 \end{odpowiedź}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
