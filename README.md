@@ -13,6 +13,9 @@ Ich kopia znajduję się w tym [arkuszu.](https://docs.google.com/spreadsheets/
     - Wykonaj komendę `git diff` i prześlij to, co ona zwróci do organizatora.
 1. Oznacz w arkuszu, że punkt został zrobiony.
 
+Komenda `git diff` pokazuje, co zostało zmienione i można na jej podstawie szybko
+dodać zmiany w scentralizowany sposób, bez konfliktów gita.
+
 ### Usterki
 Jeśli wydaje Ci się, że dodana odpowiedź jest niepełna lub zawiera błąd,
 skontaktuj się z autorem odpowiedzi lub napisz to w komórce `uwagi` w arkuszu.
