@@ -490,7 +490,13 @@ Co to jest nadmartyngał?
 Proszę podać przykład nadmartyngału, który nie jest martyngałem.
 \end{pytanie}
 \begin{odpowiedź}
-    % tu zamieść odpowiedź
+    Trywialny przykład: rozważmy trywialną filtrację
+    $\mathcal{F}_t = \{\emptyset, \Omega\}$ oraz zmienne losowe
+    $X_t = -t$ (deterministyczne). Wtedy  \[
+    \mathbb{E}(X_t\mid \mathcal{F}_s) = \mathbb{E}X_t = -t \leq -s
+    \] 
+    o ile tylko $t \geq s$. Nie jest to martyngał, bo dla $t > s$
+    nierówność jest ostra.
 \end{odpowiedź}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
