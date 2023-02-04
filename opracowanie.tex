@@ -66,8 +66,13 @@ Co to jest rozkład wielowymiarowy procesu stochastycznego?
 \begin{pytanie}
 Jak definiuje się własność Markowa procesu stochastycznego?
 \end{pytanie}
-\begin{odpowiedź} 
-    % tu zamieść odpowiedź
+\begin{odpowiedź}
+    Proces stochastyczny $X$ jest procesem Markowa, jeśli \[
+    \mathbb{P}(X_{n+1}=x_{x+1}\mid X_n=x_n,\ldots ,X_0=x_0)\\
+    = \mathbb{P}(X_{n+1}=x_{n+1}\mid X_n=x_n),
+    \]
+    Gdzie $n \in N$ i $x_0, x_1, \ldots, x_{n+1} \in S$.\\
+    \underline{Nieważne jak gdzieś dotarliśmy, ważne, że tam jesteśmy.}
 \end{odpowiedź}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
@@ -76,8 +81,13 @@ Jak definiuje się własność Markowa procesu stochastycznego?
 \begin{pytanie}
 Jakie postulaty spełnia macierz przejścia łańcucha Markowa?
 \end{pytanie}
-\begin{odpowiedź} 
-    % tu zamieść odpowiedź
+\begin{odpowiedź}
+    Stochastyczna macierz przejścia: $P = [p(x,y)]_{x, y\in s}$\\
+    Własności:
+    \begin{enumerate}
+        \item $p(x, y) > 0 \forall (x, y) \in S$
+        \item $\sum_{y} p(x, y) = 1 \forall x \in S$
+    \end{enumerate}
 \end{odpowiedź}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
@@ -86,8 +96,9 @@ Jakie postulaty spełnia macierz przejścia łańcucha Markowa?
 \begin{pytanie}
 Co to znaczy, że macierz jest podwójnie stochastyczna? Proszę podać przykład.
 \end{pytanie}
-\begin{odpowiedź} 
-    % tu zamieść odpowiedź
+\begin{odpowiedź}
+    Macierz podwójnie stochastyczna to taka macierz,
+    której elementy wierszy i kolumn sumują się do 1.
 \end{odpowiedź}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
@@ -96,8 +107,10 @@ Co to znaczy, że macierz jest podwójnie stochastyczna? Proszę podać przykła
 \begin{pytanie}
 Co to znaczy, że łańcuch Markowa jest nieprzywiedlny?
 \end{pytanie}
-\begin{odpowiedź} 
-    % tu zamieść odpowiedź
+\begin{odpowiedź}
+    Łańcuch Markowa jest nieprzywiedlny, jeżeli wszystkie
+    stany komunikują się ze sobą (z każdego stanu
+    możemy przejść do innego).
 \end{odpowiedź}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
@@ -106,8 +119,8 @@ Co to znaczy, że łańcuch Markowa jest nieprzywiedlny?
 \begin{pytanie}
 Jak definiujemy okres łańcucha Markowa?
 \end{pytanie}
-\begin{odpowiedź} 
-    % tu zamieść odpowiedź
+\begin{odpowiedź}
+    Okres stanu to $d=NWD(D_i)$
 \end{odpowiedź}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
@@ -116,8 +129,10 @@ Jak definiujemy okres łańcucha Markowa?
 \begin{pytanie}
 Co to jest rozkład stacjonarny dla łańcucha Markowa?
 \end{pytanie}
-\begin{odpowiedź} 
-    % tu zamieść odpowiedź
+\begin{odpowiedź}
+    Rozkład prawdopodobieństwa $\mi = (\mi (x) : x \in s)$
+    nazywamy rozkładem stacjonarnym macierzy przejścia $\mathbb{P}$,
+    gdy $\mi \mathbb{P} = \mi$.
 \end{odpowiedź}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
@@ -126,8 +141,8 @@ Co to jest rozkład stacjonarny dla łańcucha Markowa?
 \begin{pytanie}
 Co to znaczy, że łańcuch Markowa jest nieokresowy?
 \end{pytanie}
-\begin{odpowiedź} 
-    % tu zamieść odpowiedź
+\begin{odpowiedź}
+    Łańcuch Markowa jest nieokresowy, jeżeli $d=1$.
 \end{odpowiedź}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
