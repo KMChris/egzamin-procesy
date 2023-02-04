@@ -98,7 +98,9 @@ Co to znaczy, że macierz jest podwójnie stochastyczna? Proszę podać przykła
 \end{pytanie}
 \begin{odpowiedź}
     Macierz podwójnie stochastyczna to taka macierz,
-    której elementy wierszy i kolumn sumują się do 1.
+    której wyrazy są nieujemne, oraz
+    wiersze i kolumny sumują się do 1.
+    Na przykład macierz identycznościowa.
 \end{odpowiedź}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
@@ -120,7 +122,11 @@ Co to znaczy, że łańcuch Markowa jest nieprzywiedlny?
 Jak definiujemy okres łańcucha Markowa?
 \end{pytanie}
 \begin{odpowiedź}
-    Okres stanu to $d=NWD(D_i)$
+    Niech $D_i = \{n \in \mathbb{N}: p_{ii}^{(n)} > 0 \}$.
+    Okres stanu $i$ to $d_i=\operatorname{NWD}(D_i)$.
+    Jeśli łańcuch jest nieprzywiedlny, to wszystkie stany mają ten
+    sam okres. Oznaczamly wspólną wartość $d = d_i$.
+    Wtedy jeśli $d > 1$ to mówimy że ma okres $d_i$.
 \end{odpowiedź}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
@@ -133,6 +139,7 @@ Co to jest rozkład stacjonarny dla łańcucha Markowa?
     Rozkład prawdopodobieństwa $\mu = (\mu (\{x\}) : x\in S)$
     nazywamy rozkładem stacjonarnym macierzy przejścia $\mathbb{P}$,
     gdy $\mu \mathbb{P} = \mu$.
+    Rozkład $\mu$ nie zmienia się w czasie.
 \end{odpowiedź}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
@@ -152,7 +159,14 @@ Co to znaczy, że łańcuch Markowa jest nieokresowy?
 Proszę sformułować twierdzenie o zbieżności łańcuchów Markowa ze skończoną przestrzenią stanów.
 \end{pytanie}
 \begin{odpowiedź}
-    % tu zamieść odpowiedź
+    Niech $\mathbb{P} = [p_{ij}]_{i,j=1}^N$
+    będzie macierzą stochastyczną (stopnia  N).
+    Załóżmy, że dla pewnego $n_0\in \mathbb{N}$
+    mamy $p_{ij}^{(n_0)} > 0$ dla wszystkich $i, j=1, \ldots N$.
+    Wtedy istnieje wektor $\pi = (\pi_j: j = 1, \ldots N)$
+    taki, że $\lim_{n\to \infty}p^{(n)}_{ij} = \pi_j$ dla
+    $i = 1, 2, \ldots N$ oraz $\pi$ jest jedynym rozkładem
+    stacjonarnym macierzy $\mathbb{P}$.
 \end{odpowiedź}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
