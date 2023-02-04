@@ -14,4 +14,22 @@ Aby dodać opracowanie:
 1. Oznacz w arkuszu, że punkt został zrobiony.
 
 
-Jak wygląda `git diff`:
+W przypadku przesyłanie wyniku komendy `git diff`:
+Powinna ona wyglądać mniej więcej tak jak poniżej.
+``` diff
+diff --git a/opracowanie.tex b/opracowanie.tex
+index 2e6a112..c631bc1 100644
+--- a/opracowanie.tex
++++ b/opracowanie.tex
+@@ -77,7 +77,9 @@ Jak definiuje się własność Markowa procesu stochastycznego?
+ Jakie postulaty spełnia macierz przejścia łańcucha Markowa?
+ \end{pytanie}
+ \begin{odpowiedź}
+-    % tu zamieść odpowiedź
++    To jest odpowiedź na pytanie powyżej.^M
++    Tu jest druga linijka.^M
++    Tu jest trzecia.^M
+ \end{odpowiedź}
+ %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+```
