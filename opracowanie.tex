@@ -189,6 +189,9 @@ Jak definiujemy czas trafienia łańcucha Markowa w ustalony punkt?
 Co oznacza tranzytywność i rekurencyjność łańcucha Markowa o przeliczalnym zbiorze stanów?
 \end{pytanie}
 \begin{odpowiedź}
+    Niech $S$ będzie przeliczalnym zbiorem stanów.
+    Dla $x, y \in S$ definiujemy
+    $\rho_{x,y} = \sum_{m = 1}^\infty P_x(T_y = m) = 1 - P_x(T_y = \infty)$.
     Stan $x$ nazywamy powracającym (rekurencyjnym),
     gdy $\rho_{x,x} = 1$,
     a chwilowym (tranzytywnym), jeżeli $\rho_{x,x} < 1$.
@@ -201,7 +204,15 @@ Co oznacza tranzytywność i rekurencyjność łańcucha Markowa o przeliczalnym
 Jak definiujemy generator macierzy przejścia z czasem ciągłym?
 \end{pytanie}
 \begin{odpowiedź}
-    % tu zamieść odpowiedź
+    $(P(t), t\geq 0)$ jest Markowską macierzą stochastyczną
+    $N \times N$ z czasem ciągłym wtedy i tylko wtedy,
+    gdy istnieje macierz $G= [g_{ij}]$ ($N\times N)$ taka, że
+    \begin{gather}
+        g_{ij} \geq 0 \quad i \neq j, \qquad
+        \sum_{j=1}^N g_{ij} = 0, \qquad
+        P(t)=\exp(tG) \quad t\geq 0.
+    \end{gather}
+    Macierz $G$ jest jedyna i $G$ nazywamy generatorem $P(t)$.
 \end{odpowiedź}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
@@ -211,7 +222,11 @@ Jak definiujemy generator macierzy przejścia z czasem ciągłym?
 Jakie postulaty spełnia generator macierzy przejścia z czasem ciągłym?
 \end{pytanie}
 \begin{odpowiedź}
-    % tu zamieść odpowiedź
+    \begin{gather}
+        g_{ij} \geq 0 \quad i \neq j, \qquad
+        \sum_{j=1}^N g_{ij} = 0, \qquad
+        P(t)=\exp(tG) \quad t\geq 0.
+    \end{gather}
 \end{odpowiedź}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
@@ -221,7 +236,10 @@ Jakie postulaty spełnia generator macierzy przejścia z czasem ciągłym?
 Jakie równanie różniczkowe spełnia macierz stochastyczna z czasem ciągłym?
 \end{pytanie}
 \begin{odpowiedź}
-    % tu zamieść odpowiedź
+    \begin{equation}
+        P(t)' = GP(t)
+    \end{equation}
+    gdzie $G$ jest generatorem $P$, czyli $P(t)=\exp(tG)$.
 \end{odpowiedź}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
@@ -231,7 +249,13 @@ Jakie równanie różniczkowe spełnia macierz stochastyczna z czasem ciągłym?
 W jaki sposób opisujemy czysty proces urodzin?
 \end{pytanie}
 \begin{odpowiedź}
-    % tu zamieść odpowiedź
+    Proces sygnałowy: niemalejący w czasie,
+        cadlag, o wartościach całkowitych nieujemnych; \\
+    Proces o przyrostach niezależnych:
+        $X(t_i)-X(s_i)$ dla $i=1,2,\ldots,n$
+        są niezależne dla rozłącznych przedziałów $(s_i,t_i)$; \\
+    Proces o przyrostach jednorodnych w czasie:
+        $X(s+t)-X(s)\overset d = X(t)-X(0)$.
 \end{odpowiedź}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
@@ -251,7 +275,13 @@ Co oznacza eksplozja demograficzna dla czystego procesu urodzin?
 Proszę sformułować twierdzenie o braku eksplozji dla czystego procesu urodzin.
 \end{pytanie}
 \begin{odpowiedź}
-    % tu zamieść odpowiedź
+    Niech $X(t)$ będzie czystym procesem urodzin
+    o intensywnościach $\lambda_n \geq 0$ i~stanie początkowym 0,
+    tzn. $\mathbb{P}(X(0)=0)=1$. Zachodzi \[
+        \left(\forall t \geq 0 \sum_{n = 0}^\infty
+        \mathbb{P}(X(t)=n)=1\right) \qquad \iff \qquad
+        \sum_{n = 0}^\infty \frac 1 {\lambda_n} = \infty
+    \] 
 \end{odpowiedź}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
@@ -261,7 +291,17 @@ Proszę sformułować twierdzenie o braku eksplozji dla czystego procesu urodzin
 Proszę podać postulaty procesu Poissona.
 \end{pytanie}
 \begin{odpowiedź}
-    % tu zamieść odpowiedź
+    Postulaty procesu Poissona:
+    \begin{enumerate}
+        \item $X(0) = 0$ p.n.p.
+        \item Niezależność przyrostów:
+            $X(t_i)-X(s_i)$ dla $i=1,2,\ldots,n$
+            są niezależne dla rozłącznych przedziałów $(s_i,t_i)$
+        \item $X(s+t)-X(s)$ ma rozkład Poissona o średniej $\lambda t$
+        \item Trajektorie procesu $X$ są prawostronnie ciągłe
+            na $[0, \infty)$, mają lewostronne granice na $(0, \infty )$
+            o skokach wysokości $1$.
+    \end{enumerate}
 \end{odpowiedź}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
@@ -271,7 +311,9 @@ Proszę podać postulaty procesu Poissona.
 Co onacza niezależność przyrostów procesu stochastycznego?
 \end{pytanie}
 \begin{odpowiedź}
-    % tu zamieść odpowiedź
+    Niezależność przyrostów:
+    $X(t_i)-X(s_i)$ dla $i=1,2,\ldots,n$
+    są niezależne dla rozłącznych przedziałów $(s_i,t_i)$.
 \end{odpowiedź}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
