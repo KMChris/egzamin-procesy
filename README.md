@@ -61,3 +61,6 @@ index 2e6a112..c631bc1 100644
  %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 ```
+
+Dobrą metodą upewnienia się, że cały tekst został skopiowany jest wykonanie
+`git diff > zmiany.diff` i przesłanie powstałego pliku `zminay.diff`.
