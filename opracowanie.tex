@@ -324,8 +324,9 @@ Co onacza niezależność przyrostów procesu stochastycznego?
 Jak definiujemy funkcję charakterystyczną, funkcję tworzącą momenty i transformatę Laplace'a zmiennej losowej?
 \end{pytanie}
 \begin{odpowiedź}
-    funkcja tworząca momenty: $\mu_x (t) = \mathbb{E} (\e^{itx}), \ t \in \mathbb{R}$. \\
-    transformata Lapace'a: Jeżeli $X$ jest zmienną losową, to $\phi (\xi) = \mathbb{E}(\e^{-\xi x}), \ \xi \geq 0$ nazywany jest transformatą Laplace'a zmienej losowej X.
+    Transformata Lapace'a: Jeżeli $X$ jest zmienną losową, to $\phi (\xi) = \mathbb{E}(\e^{-\xi X}), \ \xi \geq 0$ nazywany jest transformatą Laplace'a zmienej losowej X.
+    Funkcja tworząca momenty: $MGF_X(t) = \mathbb{E} (\e^{tX}), \ t \in \mathbb{R}$. \\
+    Funkcja charakterystyczna: $\varphi_X(t) = \mathbb{E} (\e^{itX}), \ t \in \mathbb{R}$. \\
 \end{odpowiedź}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
@@ -335,7 +336,11 @@ Jak definiujemy funkcję charakterystyczną, funkcję tworzącą momenty i trans
 Czy zna Pani/Pan jakąś konstrukcję procesu Poissona? Proszę o niej opowiedzieć.
 \end{pytanie}
 \begin{odpowiedź}
-    % tu zamieść odpowiedź
+    Niech $T_1, T_2, \ldots$ będą iid. $\operatorname{Exp}(\lambda)$.
+    Niech $S_n = T_1 + T_2 + \ldots T_n$.
+    Wtedy $N(t) =\sup\{n \geq 0: S_n \leq t\}$ jest procesem Poissona.
+    Omawialiśmy tę konstrukcję zanim zdefiniowaliśmy proces aksjomatycznie.
+    Zachodzi $N(t) = n \iff S_n \leq t < S_{n+1}$ oraz $N(t) \geq n \iff S_n < t$.
 \end{odpowiedź}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
@@ -358,7 +363,9 @@ Proszę podać rozkłady jednowymiarowe procesu Poissona.
 Proszę podać funkcję charakterystyczną rozkładu jednowymiarowego procesu Poissona.
 \end{pytanie}
 \begin{odpowiedź}
-    % tu zamieść odpowiedź
+    Funkcja charakterystyczna: \[
+    \mathbb{E}\e^{i\xi N(t)} = \exp[-\lambda t (1 - \e^{i\xi})]
+    \]
 \end{odpowiedź}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
@@ -368,10 +375,14 @@ Proszę podać funkcję charakterystyczną rozkładu jednowymiarowego procesu Po
 Jakie postulaty spełnia prawdopodobieństwo przejścia?
 \end{pytanie}
 \begin{odpowiedź}
-    $A \mapsto P_{s,t} (x,A)$ są miarami prawdopodobieństwa,
-    $x \mapsto P_{s,t}(x,A)$ są funkcjami mierzalnymi, \\
-    równania Chapmana-Kołmogorowa,
-    delta Diraca.
+\begin{enumerate}
+    \item $A \mapsto P_{s,t} (x,A)$ są miarami probabilistycznymi;
+    \item $x \mapsto P_{s,t}(x,A)$ są funkcjami mierzalnymi;
+    \item równania Chapmana-Kołmogorowa: dla $s \leq t \leq u$, \[
+    \int_S p_{s,t}(x, \diff y) p_{s, u}(y, A) = p_{s, u}(x, A);
+    \] 
+    \item Dla $s>t$, $p_{s, t} = 0$, dla $s = t$, $p_{s,s}(x, \cdot) = \delta_x$.
+\end{enumerate}
 \end{odpowiedź}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
@@ -393,7 +404,10 @@ Co to znaczy, że prawdopodobieństwo przejścia jest jednorodne w czasie?
 Co to znaczy, że prawdopodobieństwo przejścia jest jednorodne w przestrzeni?
 \end{pytanie}
 \begin{odpowiedź}
-    % tu zamieść odpowiedź
+    Prawdopodobieństwo przejścia jest jednorodne w przestrzeni,
+    jeżeli ,,przestrzeń'' jest przestrzenią wektorową oraz \[
+        (\forall x, y, A) \qquad p_{s, t}(x, A) = p_{s, t}(x + y, A + y).
+    \] 
 \end{odpowiedź}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
@@ -413,7 +427,9 @@ Proszę podać prawdopodobieństwo przejścia procesu Poissona.
 Co to jest trajektoria procesu stochastycznego?
 \end{pytanie}
 \begin{odpowiedź}
-    % tu zamieść odpowiedź
+    Trajektoria: $[0, \infty) \ni t \mapsto N(t) = N(t, \omega)$.
+    Czyli dla ustalonego $\omega \in \Omega$, jest to funkcja
+    $t \mapsto N(t)(\omega)$.
 \end{odpowiedź}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
@@ -434,7 +450,11 @@ Co to znaczy, że trajektorie procesu są cadlag?
 Co oznacza ciągłość stochastyczna procesu? Czy proces Poissona jest stochastycznie ciągły?
 \end{pytanie}
 \begin{odpowiedź}
-    % tu zamieść odpowiedź
+    Proces stochastyczny $(X(t))_{t \in T}$ jest stochastycznie
+    ciągły, jeśli $t_n \to t$ implikuje $X(t_n) \overset {\mathbb{P}} X(t)$
+    (zbieżność według prawdopodobieństwa), czyli
+    $\mathbb{P}(|X(t_n) - X(t)| > \varepsilon) \to 0$ gdy $t_n \to t$ dla
+    dowolnego $\varepsilon > 0$.
 \end{odpowiedź}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
@@ -444,7 +464,12 @@ Co oznacza ciągłość stochastyczna procesu? Czy proces Poissona jest stochast
 Proszę podać postulaty procesu Wienera.
 \end{pytanie}
 \begin{odpowiedź}
-    % tu zamieść odpowiedź
+\begin{enumerate}
+    \item $W(0) = 0$ p.n.p.
+    \item $W$ ma przyrosty niezależne (dla rozłącznych odcinków $(s_i, t_i)$
+    \item $W(t+s) - W(s) \overset D = N(0, t)$
+    \item Trajektorie $t \mapsto W(t)$ są ciągłe p.n.p.
+\end{enumerate}
 \end{odpowiedź}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
@@ -454,7 +479,9 @@ Proszę podać postulaty procesu Wienera.
 Proszę podać rozkłady jednowymiarowe procesu Wienera.
 \end{pytanie}
 \begin{odpowiedź}
-    % tu zamieść odpowiedź
+    Rozkład jednowymiarowy to rozkład wektora z tylko jedną współrzędną,
+    czyli rozkład $W(t)$ dla ustalonego (dowolnego) $t \geq 0$.
+    Z postulatów procesu Wienera wynika, że musi być to $N(0, t)$.
 \end{odpowiedź}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
@@ -464,7 +491,9 @@ Proszę podać rozkłady jednowymiarowe procesu Wienera.
 Proszę podać prawdopodobieństwo przejścia procesu Wienera.
 \end{pytanie}
 \begin{odpowiedź}
-    % tu zamieść odpowiedź
+\[
+    P_t(x, A) = \int_{A - x}\frac 1 {\sqrt{2\pi}} \e^{-y^2/2t} \diff y
+\] 
 \end{odpowiedź}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
@@ -474,7 +503,9 @@ Proszę podać prawdopodobieństwo przejścia procesu Wienera.
 Jak definiujemy warunek Hoeldera ciągłości funkcji? Czy trajektorie Procesu Wienera spełniają ten warunek?
 \end{pytanie}
 \begin{odpowiedź}
-    % tu zamieść odpowiedź
+    Niech $p \in (0, 1/2)$. Wtedy istnieje zmienna losowa
+    $C: \Omega \to [0, \infty)$ taka, że
+    $|W_t \ W_x| \leq  C|t - s|^p$, dla $0 \leq s, t, \leq 1$.
 \end{odpowiedź}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
@@ -484,7 +515,12 @@ Jak definiujemy warunek Hoeldera ciągłości funkcji? Czy trajektorie Procesu W
 Jak definiujemy odwrotkę procesu Wienera?
 \end{pytanie}
 \begin{odpowiedź}
-    % tu zamieść odpowiedź
+    Jeśli $W_t$ jest procesem Wienera, to \[
+    X_t = \begin{cases}
+        tW\left(\frac 1 t\right) \quad &:t>0 \\
+        0 \quad &: t = 0
+        \end{cases}
+    \] też jest procesem Wienera.
 \end{odpowiedź}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
@@ -514,7 +550,12 @@ Co to jest filtracja?
 Proszę sformułować prawo 0-1 Blumenthala dla procesu Wienera.
 \end{pytanie}
 \begin{odpowiedź}
-    % tu zamieść odpowiedź
+    Niech $(W_t, t\geq 0)$ będzie procesem Wienera. Niech
+    $\mathcal{B}_u = \sigma(W_t, t\leq u)$ dla $u \geq 0$.
+    Niech $\mathcal{B}_{u^+} = \bigcap_{u > t} \mathcal{B_u}$.
+    Prawo 0-1 Blumenthala mówi, że sigma ciało $ \mathcal{B_{0^+}}$
+    jest zdegenerowane, czyli wszystkie jego elementy mają
+    prawdopodobieństwo $0$ lub $1$.
 \end{odpowiedź}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
