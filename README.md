@@ -10,7 +10,7 @@ Ich kopia znajduję się w tym [arkuszu.](https://docs.google.com/spreadsheets/
 1. Upewnij się, że plik `pdf` się kompiluje.
 1. Przekaż zmiany do repozytorium. Można to zrobić na 2 sposoby:
     - Wykonaj commita i utwórz `pull request` **albo** (jeśli nie chcesz lub nie wiesz jak to zrobić)
-    - Wykonaj komendę `git diff` i prześlij to, co ona zwróci do organizatora.
+    - Wykonaj komendę `git diff origin/HEAD` i prześlij to, co ona zwróci do organizatora.
 1. Oznacz w arkuszu, że punkt został zrobiony.
 
 Komenda `git diff` pokazuje, co zostało zmienione i można na jej podstawie szybko
@@ -63,4 +63,4 @@ index 2e6a112..c631bc1 100644
 ```
 
 Dobrą metodą upewnienia się, że cały tekst został skopiowany jest wykonanie
-`git diff > zmiany.diff` i przesłanie powstałego pliku `zminay.diff`.
+`git diff origin/HEAD > zmiany.diff` i przesłanie powstałego pliku `zminay.diff`.
