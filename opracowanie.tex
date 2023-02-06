@@ -1,4 +1,5 @@
-\documentclass[10pt]{mwart}
+\documentclass[10pt,twocolumn]{mwart}
+%\documentclass[11pt,twocolumn]{article}
 \usepackage[margin=1.7cm]{geometry}
 \usepackage{polski}
 \usepackage[utf8]{inputenc}
@@ -16,9 +17,10 @@
 {\em}{}%
 {\newline}{}%
 \theoremstyle{plain}
-\newtheorem{pytanie}{Pytanie}
+\newtheorem{pytanie}{}
 \theoremstyle{break}
-\newtheorem*{odpowiedź}{}
+\newenvironment{odpowiedź}{}{\vspace{0.3em}\hrule}
+
 
 %% STAŁE
 % liczba e
@@ -68,12 +70,12 @@ Co to jest rozkład wielowymiarowy procesu stochastycznego?
 Jak definiuje się własność Markowa procesu stochastycznego?
 \end{pytanie}
 \begin{odpowiedź}
-    Proces stochastyczny $X$ jest procesem Markowa, jeśli \[
+    Proces stochastyczny $X$ jest procesem Markowa, jeśli $
     \mathbb{P}(X_{n+1}=x_{n+1}\mid X_n=x_n,\ldots ,X_0=x_0)\\
     = \mathbb{P}(X_{n+1}=x_{n+1}\mid X_n=x_n),
-    \]
-    Gdzie $n \in \mathbb{N}$ i $x_0, x_1, \ldots, x_{n+1} \in S$.\\
-    \underline{Nieważne jak gdzieś dotarliśmy, ważne, że tam jesteśmy.}
+    $
+    Gdzie $n \in \mathbb{N}$ i $x_0, x_1, \ldots, x_{n+1} \in S$.
+    {\bf Nieważne jak gdzieś dotarliśmy, ważne, że tam jesteśmy.}
 \end{odpowiedź}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
@@ -209,9 +211,9 @@ Jak definiujemy generator macierzy przejścia z czasem ciągłym?
     $N \times N$ z czasem ciągłym wtedy i tylko wtedy,
     gdy istnieje macierz $G= [g_{ij}]$ ($N\times N)$ taka, że
     \begin{gather}
-        g_{ij} \geq 0 \quad i \neq j, \qquad
-        \sum_{j=1}^N g_{ij} = 0, \qquad
-        P(t)=\exp(tG) \quad t\geq 0.
+        g_{ij} \geq 0 \,\, i \neq j, \quad
+        \sum_{j=1}^N g_{ij} = 0, \quad
+        P(t)=\exp(tG) \,\, t\geq 0.
     \end{gather}
     Macierz $G$ jest jedyna i $G$ nazywamy generatorem $P(t)$.
 \end{odpowiedź}
@@ -224,9 +226,9 @@ Jakie postulaty spełnia generator macierzy przejścia z czasem ciągłym?
 \end{pytanie}
 \begin{odpowiedź}
     \begin{gather}
-        g_{ij} \geq 0 \quad i \neq j, \qquad
-        \sum_{j=1}^N g_{ij} = 0, \qquad
-        P(t)=\exp(tG) \quad t\geq 0.
+        g_{ij} \geq 0 \,\, i \neq j, \quad
+        \sum_{j=1}^N g_{ij} = 0, \quad
+        P(t)=\exp(tG) \,\, t\geq 0.
     \end{gather}
 \end{odpowiedź}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -280,7 +282,7 @@ Proszę sformułować twierdzenie o braku eksplozji dla czystego procesu urodzin
     o intensywnościach $\lambda_n \geq 0$ i~stanie początkowym 0,
     tzn. $\mathbb{P}(X(0)=0)=1$. Zachodzi \[
         \left(\forall t \geq 0 \sum_{n = 0}^\infty
-        \mathbb{P}(X(t)=n)=1\right) \qquad \iff \qquad
+        \mathbb{P}(X(t)=n)=1\right) \quad \iff \quad
         \sum_{n = 0}^\infty \frac 1 {\lambda_n} = \infty
     \] 
 \end{odpowiedź}
@@ -295,9 +297,7 @@ Proszę podać postulaty procesu Poissona.
     Postulaty procesu Poissona:
     \begin{enumerate}
         \item $X(0) = 0$ p.n.p.
-        \item Niezależność przyrostów:
-            $X(t_i)-X(s_i)$ dla $i=1,2,\ldots,n$
-            są niezależne dla rozłącznych przedziałów $(s_i,t_i)$
+        \item Niezależność przyrostów (zob. {\bf 20.})
         \item $X(s+t)-X(s)$ ma rozkład Poissona o średniej $\lambda t$
         \item Trajektorie procesu $X$ są prawostronnie ciągłe
             na $[0, \infty)$, mają lewostronne granice na $(0, \infty )$
