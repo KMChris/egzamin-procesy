@@ -419,7 +419,13 @@ Co to znaczy, że prawdopodobieństwo przejścia jest jednorodne w przestrzeni?
 Proszę podać prawdopodobieństwo przejścia procesu Poissona.
 \end{pytanie}
 \begin{odpowiedź}
-    % tu zamieść odpowiedź
+    P.p. dla singletonu $\{n + k\}$ :
+    \begin{equation}
+        p_t(n, \{n + k\}) = \mathbb{P}(X(t) = n + k \mid X(0) = n)
+        = \frac {t^k}{k!} \e^{-t}.
+    \end{equation}
+    Dla dowolnego zbioru $A \subseteq \mathbb{N}_0$, mamy
+    $p_t(n, A) = \sum_{k \in A, k \geq n} p_t(n, \{k\})$.
 \end{odpowiedź}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
@@ -561,10 +567,10 @@ Proszę sformułować prawo 0-1 Blumenthala dla procesu Wienera.
 \begin{odpowiedź}
     Niech $(W_t, t\geq 0)$ będzie procesem Wienera. Niech
     $\mathcal{B}_u = \sigma(W_t, t\leq u)$ dla $u \geq 0$.
-    Niech $\mathcal{B}_{u^+} = \bigcap_{u > t} \mathcal{B_u}$.
-    Prawo 0-1 Blumenthala mówi, że sigma ciało $ \mathcal{B_{0^+}}$
-    jest zdegenerowane, czyli wszystkie jego elementy mają
-    prawdopodobieństwo $0$ lub $1$.
+    Niech $\mathcal{B}_{u^+} = \bigcap_{u > t} \mathcal{B}_u$.
+    Prawo 0-1 Blumenthala mówi, że sigma ciało $ \mathcal{B}_{0^+}$
+    jest zdegenerowane, czyli wszystkie zdarzenia $A \in \mathcal{B}_{0^+}$
+    mają prawdopodobieństwo $0$ lub $1$.
 \end{odpowiedź}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
@@ -647,7 +653,7 @@ Co to jest podmartyngał?
 \end{pytanie}
 \begin{odpowiedź}
     Przyjmijmy założenia takie, jak w odpowiedzi \ref
-    {def-nadmartyngału}. Zmianie ulega jedynie relacja pomiędzy wartością
+    {def-martyngału}. Zmianie ulega jedynie relacja pomiędzy wartością
     oczekiwaną, a zmienną losową. To znaczy mamy
     \begin {equation*}
         \left(\forall s, t \in T, s \leq t \right) \expVal (X_t | \mathcal
