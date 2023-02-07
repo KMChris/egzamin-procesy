@@ -35,6 +35,7 @@
 \DeclareMathOperator{\Rea}{Re}
 % Część urojona niepisana frakturą, `\Ima` od Imaginary
 \DeclareMathOperator{\Ima}{Im}
+\DeclareMathOperator {\expVal} {\mathbf E}
 
 \begin{document}
 %\maketitle
@@ -572,7 +573,15 @@ Proszę sformułować prawo 0-1 Blumenthala dla procesu Wienera.
 Co to jest martyngał?
 \end{pytanie}
 \begin{odpowiedź}
-    % tu zamieść odpowiedź
+    Rozważmy filtrowaną przestrzeń probabilistyczną z sigma\dywiz ciałem \(
+    \mathcal F_t \) należącym do filtracji i zdefiniowany na niej proces
+    stochastyczny \( \left\{ X_t \right\}_{t \in T} \). Mówimy, że \( X_t
+    \) jest \textit {martyngałem}, jeżeli dla każdego \( t \in T \), \( X_t
+    \) jest \( \mathcal F_t \) mierzalne, ma skończoną wartość oczekiwaną
+    \( \expVal |X_t| < \infty \) oraz
+    \begin {equation*}
+        \left(\forall s, t \in T, s \leq t \right) \expVal (X_t | \mathcal F_s) = X_s.
+    \end {equation*}
 \end{odpowiedź}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
@@ -582,7 +591,16 @@ Co to jest martyngał?
 Proszę podać przykład martyngału.
 \end{pytanie}
 \begin{odpowiedź}
-    % tu zamieść odpowiedź
+    Błądzenie losowe z naturalną filtracją. Ustalmy ciąg niezależnych
+    zmiennych losowych \( \left( X_n \right)_{n \in \mathbf N}, \expVal X_n
+    = x < \infty \) oraz sum częściowych \( S_n \coloneqq \sum_{i \leq n}
+    X_i \), a także sigma\dywiz ciało \( \mathcal F_t \) z filtracji. Wtedy
+    dla \( m < n \) mamy
+    \begin {equation*}
+    \expVal (S_n | \mathcal F_m) = \expVal \left(\left. S_m + \sum_{i=m +
+        1}^n X_i \right| \mathcal F_m \right) = S_m + (n - m)x.
+    \end {equation*}
+    Dla \( x = 0 \), \( S_m \) jest martyngałem.
 \end{odpowiedź}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
