@@ -573,7 +573,15 @@ Proszę sformułować prawo 0-1 Blumenthala dla procesu Wienera.
 Co to jest martyngał?
 \end{pytanie}
 \begin{odpowiedź}
-    % tu zamieść odpowiedź
+    Rozważmy filtrowaną przestrzeń probabilistyczną z sigma\dywiz ciałem \(
+    \mathcal F_t \) należącym do filtracji i zdefiniowany na niej proces
+    stochastyczny \( \left\{ X_t \right\}_{t \in T} \). Mówimy, że \( X_t
+    \) jest \textit {martyngałem}, jeżeli dla każdego \( t \in T \), \( X_t
+    \) jest \( \mathcal F_t \) mierzalne, ma skończoną wartość oczekiwaną
+    \( \expVal |X_t| < \infty \) oraz
+    \begin {equation*}
+        \left(\forall s, t \in T, s \leq t \right) \expVal (X_t | \mathcal F_s) = X_s.
+    \end {equation*}
 \end{odpowiedź}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
