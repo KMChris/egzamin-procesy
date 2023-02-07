@@ -573,7 +573,7 @@ Proszę sformułować prawo 0-1 Blumenthala dla procesu Wienera.
 \begin{pytanie}
 Co to jest martyngał?
 \end{pytanie}
-\begin{odpowiedź}
+\begin{odpowiedź} \label {def-martyngału}
     Rozważmy filtrowaną przestrzeń probabilistyczną z sigma\dywiz ciałem \(
     \mathcal F_t \) należącym do filtracji i zdefiniowany na niej proces
     stochastyczny \( \left\{ X_t \right\}_{t \in T} \). Mówimy, że \( X_t
@@ -610,8 +610,14 @@ Proszę podać przykład martyngału.
 \begin{pytanie}
 Co to jest nadmartyngał?
 \end{pytanie}
-\begin{odpowiedź}
-    % tu zamieść odpowiedź
+\begin{odpowiedź} \label {def-nadmartyngału}
+    Przyjmijmy założenia takie, jak w odpowiedzi \ref
+    {def-martyngału}. Zmianie ulega jedynie relacja pomiędzy wartością
+    oczekiwaną, a zmienną losową. To znaczy mamy
+    \begin {equation*}
+        \left(\forall s, t \in T, s \leq t \right) \expVal (X_t | \mathcal
+        F_s) \leqslant X_s.
+    \end {equation*}
 \end{odpowiedź}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
@@ -637,7 +643,13 @@ Proszę podać przykład nadmartyngału, który nie jest martyngałem.
 Co to jest podmartyngał?
 \end{pytanie}
 \begin{odpowiedź}
-    % tu zamieść odpowiedź
+    Przyjmijmy założenia takie, jak w odpowiedzi \ref
+    {def-nadmartyngału}. Zmianie ulega jedynie relacja pomiędzy wartością
+    oczekiwaną, a zmienną losową. To znaczy mamy
+    \begin {equation*}
+        \left(\forall s, t \in T, s \leq t \right) \expVal (X_t | \mathcal
+        F_s) \geqslant X_s.
+    \end {equation*}
 \end{odpowiedź}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
