@@ -19,7 +19,8 @@
 \theoremstyle{plain}
 \newtheorem{pytanie}{}
 \theoremstyle{break}
-\newenvironment{odpowiedź}{}{\vspace{0.3em}\hrule}
+\newcounter {odpowiedz}
+\newenvironment{odpowiedź}{\refstepcounter {odpowiedz}}{\vspace{0.3em}\hrule}
 
 
 %% STAŁE
