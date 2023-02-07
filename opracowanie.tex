@@ -591,7 +591,16 @@ Co to jest martyngał?
 Proszę podać przykład martyngału.
 \end{pytanie}
 \begin{odpowiedź}
-    % tu zamieść odpowiedź
+    Błądzenie losowe z naturalną filtracją. Ustalmy ciąg niezależnych
+    zmiennych losowych \( \left( X_n \right)_{n \in \mathbf N}, \expVal X_n
+    = x < \infty \) oraz sum częściowych \( S_n \coloneqq \sum_{i \leq n}
+    X_i \), a także sigma\dywiz ciało \( \mathcal F_t \) z filtracji. Wtedy
+    dla \( m < n \) mamy
+    \begin {equation*}
+    \expVal (S_n | \mathcal F_m) = \expVal \left(\left. S_m + \sum_{i=m +
+        1}^n X_i \right| \mathcal F_m \right) = S_m + (n - m)x.
+    \end {equation*}
+    Dla \( x = 0 \), \( S_m \) jest martyngałem.
 \end{odpowiedź}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
