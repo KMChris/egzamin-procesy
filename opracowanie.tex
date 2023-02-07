@@ -19,7 +19,8 @@
 \theoremstyle{plain}
 \newtheorem{pytanie}{}
 \theoremstyle{break}
-\newenvironment{odpowiedź}{}{\vspace{0.3em}\hrule}
+\newcounter {odpowiedz}
+\newenvironment{odpowiedź}{\refstepcounter {odpowiedz}}{\vspace{0.3em}\hrule}
 
 
 %% STAŁE
@@ -572,7 +573,7 @@ Proszę sformułować prawo 0-1 Blumenthala dla procesu Wienera.
 \begin{pytanie}
 Co to jest martyngał?
 \end{pytanie}
-\begin{odpowiedź}
+\begin{odpowiedź} \label {def-martyngału}
     Rozważmy filtrowaną przestrzeń probabilistyczną z sigma\dywiz ciałem \(
     \mathcal F_t \) należącym do filtracji i zdefiniowany na niej proces
     stochastyczny \( \left\{ X_t \right\}_{t \in T} \). Mówimy, że \( X_t
@@ -590,7 +591,7 @@ Co to jest martyngał?
 \begin{pytanie}
 Proszę podać przykład martyngału.
 \end{pytanie}
-\begin{odpowiedź}
+\begin{odpowiedź} \label {przykład-martyngału}
     Błądzenie losowe z naturalną filtracją. Ustalmy ciąg niezależnych
     zmiennych losowych \( \left( X_n \right)_{n \in \mathbf N}, \expVal X_n
     = x < \infty \) oraz sum częściowych \( S_n \coloneqq \sum_{i \leq n}
@@ -609,8 +610,14 @@ Proszę podać przykład martyngału.
 \begin{pytanie}
 Co to jest nadmartyngał?
 \end{pytanie}
-\begin{odpowiedź}
-    % tu zamieść odpowiedź
+\begin{odpowiedź} \label {def-nadmartyngału}
+    Przyjmijmy założenia takie, jak w odpowiedzi \ref
+    {def-martyngału}. Zmianie ulega jedynie relacja pomiędzy wartością
+    oczekiwaną, a zmienną losową. To znaczy mamy
+    \begin {equation*}
+        \left(\forall s, t \in T, s \leq t \right) \expVal (X_t | \mathcal
+        F_s) \leqslant X_s.
+    \end {equation*}
 \end{odpowiedź}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
@@ -627,6 +634,9 @@ Proszę podać przykład nadmartyngału, który nie jest martyngałem.
     \] 
     o ile tylko $t \geq s$. Nie jest to martyngał, bo dla $t > s$
     nierówność jest ostra.
+    
+    Kolejny przykład jest w odpowiedzi \ref {przykład-martyngału} dla \( x
+    < 0 \).
 \end{odpowiedź}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
@@ -636,7 +646,13 @@ Proszę podać przykład nadmartyngału, który nie jest martyngałem.
 Co to jest podmartyngał?
 \end{pytanie}
 \begin{odpowiedź}
-    % tu zamieść odpowiedź
+    Przyjmijmy założenia takie, jak w odpowiedzi \ref
+    {def-nadmartyngału}. Zmianie ulega jedynie relacja pomiędzy wartością
+    oczekiwaną, a zmienną losową. To znaczy mamy
+    \begin {equation*}
+        \left(\forall s, t \in T, s \leq t \right) \expVal (X_t | \mathcal
+        F_s) \geqslant X_s.
+    \end {equation*}
 \end{odpowiedź}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
