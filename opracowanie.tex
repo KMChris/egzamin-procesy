@@ -14,7 +14,7 @@
 %\documentclass[11pt,twocolumn]{article}
 \usepackage[
     tmargin=10cm,
-    bmargin=73cm, % tak aby była połowa na drugiej stronie
+    bmargin=62cm, % tak aby była połowa na drugiej stronie
 %    lmargin=10cm,
 %    rmargin=54.1cm,
     inner=10cm,
@@ -44,7 +44,7 @@
 \newtheorem{pytanie}{}
 \theoremstyle{break}
 \newcounter {odpowiedz}
-\newenvironment{odpowiedź}{\refstepcounter {odpowiedz}}{\vspace{0.3em}\hrule}
+%\newenvironment{odpowiedź}{\refstepcounter {odpowiedz}}{\vspace{0.3em}\hrule}
 \newenvironment{odpowiedź}{\vspace{-0.7em}}{\vspace{0.3em}\hrule}
 
 
@@ -285,7 +285,7 @@
     gdzie $G$ jest generatorem $P$, czyli $P(t)=\exp(tG)$.
 \end{odpowiedź}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\pagebreak % rozmieszczenie na stronach
+ % rozmieszczenie na stronach
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -294,11 +294,11 @@
 \end{pytanie}
 \begin{odpowiedź}
     \begin{itemize}
-        \item Proces sygnałowy: niemalejący w czasie,
-        càdlàg (zob. \ref{cadlag}), o~wartościach całkowitych nieujemnych;
+        \item Proces sygnałowy: niemalejący w czasie, càdlàg\\
+              (zob. \ref{cadlag}), o~wartościach całkowitych nieujemnych;
         \item Proces o przyrostach niezależnych (zob. \ref{niezależność-przyrostów});
-        \item Proces o przyrostach jednorodnych w czasie:
-            $X(s+t)-X(s)\overset d = X(t)-X(0)$.
+        \item Proces o przyrostach jednorodnych w czasie:\\
+              $X(s+t)-X(s)\overset d = X(t)-X(0)$.
     \end{itemize}
 \end{odpowiedź}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -390,7 +390,7 @@
     Zachodzi $N(t) = n \iff S_n \leq t < S_{n+1}$ oraz $N(t) \geq n \iff S_n < t$.
 \end{odpowiedź}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\pagebreak % rozmieszczenie na stronach
+ % rozmieszczenie na stronach
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -470,7 +470,7 @@
         p_t(n, \{n + k\}) = \mathbb{P}(X(t) = n + k \mid X(0) = n)
         = \frac {(t\lambda)^k}{k!} \e^{-t\lambda}.
     \end{equation}
-    Dla dowolnego zbioru $A \subseteq \mathbb{N}_0$, mamy
+    Dla dowolnego zbioru $A \subseteq \mathbb{N}_0$, mamy\\
     $p_t(n, A) = \sum_{k \in A, k \geq n} p_t(n, \{k\})$.
 \end{odpowiedź}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -609,7 +609,7 @@
     \end {equation*}
 \end{odpowiedź}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-
+\pagebreak
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \begin{pytanie}
@@ -713,7 +713,7 @@
     \end {equation*}
 \end{odpowiedź}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\pagebreak % rozmieszczenie na stronach
+ % rozmieszczenie na stronach
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
