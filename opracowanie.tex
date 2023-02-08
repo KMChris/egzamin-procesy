@@ -403,7 +403,7 @@ Jakie postulaty spełnia prawdopodobieństwo przejścia?
     \item $A \mapsto P_{s,t} (x,A)$ są miarami probabilistycznymi;
     \item $x \mapsto P_{s,t}(x,A)$ są funkcjami mierzalnymi;
     \item równania Chapmana-Kołmogorowa: dla $s \leq t \leq u$, \[
-    \int_S p_{s,t}(x, \diff y) p_{s, u}(y, A) = p_{s, u}(x, A);
+    \int_S p_{s,t}(x, \diff y) p_{t, u}(y, A) = p_{s, u}(x, A);
     \]
     \item Dla $s>t$, $p_{s, t} = 0$, dla $s = t$, $p_{s,s}(x, \cdot) = \delta_x$.
 \end{enumerate}
@@ -565,7 +565,7 @@ Proszę sformułować prawo iterowanego logarytmu.
 \begin{odpowiedź}
     Niech $(W_t, t \geq 0)$ będzie procesem Wienera. Wtedy \[
     \limsup_{t \to 0^+} \frac {W_t} {\sqrt{2t \ln \ln \frac 1 t}}
-    = 0 \quad \text{p.n.p.}
+    = 1 \quad \text{p.n.p.}
     \]
 \end{odpowiedź}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
