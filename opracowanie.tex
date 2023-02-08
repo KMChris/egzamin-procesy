@@ -62,7 +62,13 @@ Co to jest proces stochastyczny?
 Co to jest rozkład wielowymiarowy procesu stochastycznego?
 \end{pytanie}
 \begin{odpowiedź}
-    % tu zamieść odpowiedź
+    Dla procesu $(X_t)_{t\in T}$, rozkłady skończenie wymiarowe
+    to rozkłady wektorów $(X_{t_1}, X_{t_2}, \ldots, X_{t_n})$ 
+    dla dowolnego $n \in \mathbb{N}$ oraz $t_1, t_2, \ldots t_n \in T$,
+    $t_1 < t_2 < \ldots t_n$.
+    W~szczególności, jeśli $T$ jest nieskończony, żaden
+    rozkład skończenie wymiarowy nie jest rozkładem łącznym
+    całego procesu.
 \end{odpowiedź}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
@@ -539,7 +545,10 @@ Jak definiujemy odwrotkę procesu Wienera?
 Proszę sformułować prawo iterowanego logarytmu.
 \end{pytanie}
 \begin{odpowiedź}
-    % tu zamieść odpowiedź
+    Niech $(W_t, t \geq 0)$ będzie procesem Wienera. Wtedy \[
+    \limsup_{t \to 0^+} \frac {W_t} {\sqrt{2t \ln \ln \frac 1 t}}
+    = 0 \quad \text{p.n.p.}
+    \] 
 \end{odpowiedź}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
