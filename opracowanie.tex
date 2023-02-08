@@ -63,7 +63,7 @@ Co to jest rozkład wielowymiarowy procesu stochastycznego?
 \end{pytanie}
 \begin{odpowiedź}
     Dla procesu $(X_t)_{t\in T}$, rozkłady skończenie wymiarowe
-    to rozkłady wektorów $(X_{t_1}, X_{t_2}, \ldots, X_{t_n})$ 
+    to rozkłady wektorów $(X_{t_1}, X_{t_2}, \ldots, X_{t_n})$
     dla dowolnego $n \in \mathbb{N}$ oraz $t_1, t_2, \ldots t_n \in T$,
     $t_1 < t_2 < \ldots t_n$.
     Czyli rozkłady łączne skończenie wielu zmiennych tworzących proces.
@@ -270,11 +270,11 @@ W jaki sposób opisujemy czysty proces urodzin?
 \end{pytanie}
 \begin{odpowiedź}
     \begin{itemize}
-        \item Proces sygnałowy: niemalejący w czasie,
-        càdlàg (zob. \ref{cadlag}), o~wartościach całkowitych nieujemnych;
+        \item Proces sygnałowy: niemalejący w czasie, càdlàg\\
+              (zob. \ref{cadlag}), o~wartościach całkowitych nieujemnych;
         \item Proces o przyrostach niezależnych (zob. \ref{niezależność-przyrostów});
-        \item Proces o przyrostach jednorodnych w czasie:
-            $X(s+t)-X(s)\overset d = X(t)-X(0)$.
+        \item Proces o przyrostach jednorodnych w czasie:\\
+              $X(s+t)-X(s)\overset d = X(t)-X(0)$.
     \end{itemize}
 \end{odpowiedź}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -303,7 +303,7 @@ Proszę sformułować twierdzenie o braku eksplozji dla czystego procesu urodzin
         \left(\forall t \geq 0 \sum_{n = 0}^\infty
         \mathbb{P}(X(t)=n)=1\right) \quad \iff \quad
         \sum_{n = 0}^\infty \frac 1 {\lambda_n} = \infty
-    \] 
+    \]
 \end{odpowiedź}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
@@ -404,7 +404,7 @@ Jakie postulaty spełnia prawdopodobieństwo przejścia?
     \item $x \mapsto P_{s,t}(x,A)$ są funkcjami mierzalnymi;
     \item równania Chapmana-Kołmogorowa: dla $s \leq t \leq u$, \[
     \int_S p_{s,t}(x, \diff y) p_{s, u}(y, A) = p_{s, u}(x, A);
-    \] 
+    \]
     \item Dla $s>t$, $p_{s, t} = 0$, dla $s = t$, $p_{s,s}(x, \cdot) = \delta_x$.
 \end{enumerate}
 \end{odpowiedź}
@@ -431,7 +431,7 @@ Co to znaczy, że prawdopodobieństwo przejścia jest jednorodne w przestrzeni?
     Prawdopodobieństwo przejścia jest jednorodne w~przestrzeni,
     jeżeli ,,przestrzeń'' jest przestrzenią wektorową oraz \[
         (\forall x, y, A) \qquad p_{s, t}(x, A) = p_{s, t}(x + y, A + y).
-    \] 
+    \]
 \end{odpowiedź}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
@@ -446,7 +446,7 @@ Proszę podać prawdopodobieństwo przejścia procesu Poissona.
         p_t(n, \{n + k\}) = \mathbb{P}(X(t) = n + k \mid X(0) = n)
         = \frac {(t\lambda)^k}{k!} \e^{-t\lambda}.
     \end{equation}
-    Dla dowolnego zbioru $A \subseteq \mathbb{N}_0$, mamy
+    Dla dowolnego zbioru $A \subseteq \mathbb{N}_0$, mamy\\
     $p_t(n, A) = \sum_{k \in A, k \geq n} p_t(n, \{k\})$.
 \end{odpowiedź}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -566,7 +566,7 @@ Proszę sformułować prawo iterowanego logarytmu.
     Niech $(W_t, t \geq 0)$ będzie procesem Wienera. Wtedy \[
     \limsup_{t \to 0^+} \frac {W_t} {\sqrt{2t \ln \ln \frac 1 t}}
     = 0 \quad \text{p.n.p.}
-    \] 
+    \]
 \end{odpowiedź}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
@@ -668,7 +668,7 @@ Proszę podać przykład nadmartyngału, który nie jest martyngałem.
     \] 
     o ile tylko $t \geq s$. Nie jest to martyngał, bo dla $t > s$
     nierówność jest ostra.
-    
+
     Kolejny przykład jest w odpowiedzi \ref {przykład-martyngału} dla \( x
     < 0 \).
 \end{odpowiedź}
@@ -703,7 +703,7 @@ Proszę sformułować nierówność Jensena dla warunkowych wartości oczekiwany
     Wtedy zachodzi nierówność Jensena: \[
     g(\mathbb{E}[X\mid \mathcal{B}]) \leq \mathbb{E}[g(X) \mid \mathcal{B}]
     \quad \text{p.n.p.}
-    \] 
+    \]
     dla dowolnego sigma\dywiz ciała $\mathcal{B}$.
 \end{odpowiedź}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -718,7 +718,7 @@ Jak definiujemy czas stopu?
     {\emph czasem stopu} względem filtracji
     $(\mathcal{F}_t, t \in T)$ jeśli \[
     \forall t \in T \quad \{\tau \leq t\} \in \mathcal{F}_t.
-    \] 
+    \]
 \end{odpowiedź}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
@@ -753,7 +753,7 @@ Proszę sformułować tożsamość Walda.
     Wtedy \[
     \mathbb{E}\left( \sum_{i = i}^N X_i \right)=
     \left(\mathbb{E}X_1 \right)\cdot \left(\mathbb{E}N \right)
-    \] 
+    \]
 \end{odpowiedź}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
