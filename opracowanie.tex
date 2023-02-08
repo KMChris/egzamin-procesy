@@ -43,6 +43,8 @@
 \theoremstyle{definition}
 \newtheorem{pytanie}{}
 \theoremstyle{break}
+\newcounter {odpowiedz}
+\newenvironment{odpowiedź}{\refstepcounter {odpowiedz}}{\vspace{0.3em}\hrule}
 \newenvironment{odpowiedź}{\vspace{-0.7em}}{\vspace{0.3em}\hrule}
 
 
@@ -59,6 +61,7 @@
 \DeclareMathOperator{\Rea}{Re}
 % Część urojona niepisana frakturą, `\Ima` od Imaginary
 \DeclareMathOperator{\Ima}{Im}
+\DeclareMathOperator {\expVal} {\mathbb{E}}
 
 \begin{document}
 %\maketitle
@@ -73,7 +76,7 @@
     przestrzeni probabilistycznej. To znaczy \[
     \forall t \in I \quad X_t : \Omega \to \mathbb{R}
     \]
-    Gdzie $(\Omega, \mathcal{F}, \mathbb{P})$ jest pewną ustaloną przestrzenią
+    gdzie $(\Omega, \mathcal{F}, \mathbb{P})$ jest pewną ustaloną przestrzenią
     probabilistyczną.
 \end{odpowiedź}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -84,7 +87,14 @@
 \textbf{Co to jest rozkład wielowymiarowy procesu stochastycznego?}
 \end{pytanie}
 \begin{odpowiedź}
-    % tu zamieść odpowiedź
+    Dla procesu $(X_t)_{t\in T}$, rozkłady skończenie wymiarowe
+    to rozkłady wektorów $(X_{t_1}, X_{t_2}, \ldots, X_{t_n})$
+    dla dowolnego $n \in \mathbb{N}$ oraz $t_1, t_2, \ldots t_n \in T$,
+    $t_1 < t_2 < \ldots t_n$.
+    Czyli rozkłady łączne skończenie wielu zmiennych tworzących proces.
+    W~szczególności, jeśli $T$ jest nieskończony, żaden
+    rozkład skończenie wymiarowy nie jest rozkładem łącznym
+    całego procesu.
 \end{odpowiedź}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
@@ -98,7 +108,7 @@
     \mathbb{P}(X_{n+1}=x_{n+1}\mid X_n=x_n,\ldots ,X_0=x_0)\\
     = \mathbb{P}(X_{n+1}=x_{n+1}\mid X_n=x_n),
     $
-    Gdzie $n \in \mathbb{N}$ i $x_0, x_1, \ldots, x_{n+1} \in S$.
+    gdzie $n \in \mathbb{N}$ i~$x_0, x_1, \ldots, x_{n+1} \in S$.
     {\bf Nieważne jak gdzieś dotarliśmy, ważne, że tam jesteśmy.}
 \end{odpowiedź}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -109,8 +119,7 @@
 \textbf{Jakie postulaty spełnia macierz przejścia łańcucha Markowa?}
 \end{pytanie}
 \begin{odpowiedź}
-    Stochastyczna macierz przejścia: $P = [p(x,y)]_{x, y\in S}$\\
-    Własności:
+    Stochastyczna macierz przejścia: $P = [p(x,y)]_{x, y\in S}$
     \begin{enumerate}
         \item $p(x, y) \geq 0, \quad \forall x, y \in S$
         \item $\sum_{y} p(x, y) = 1, \quad \forall x \in S$
@@ -127,6 +136,8 @@
     Macierz podwójnie stochastyczna to taka macierz,
     której wyrazy są nieujemne, oraz
     wiersze i kolumny sumują się do 1.
+    Równoważnie macierz stochastyczna,
+    której transpozycja jest stochastyczna.
     Na przykład macierz identycznościowa.
 \end{odpowiedź}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -148,12 +159,13 @@
 \begin{pytanie}
 \textbf{Jak definiujemy okres łańcucha Markowa?}
 \end{pytanie}
-\begin{odpowiedź}
+\begin{odpowiedź}\label{definicja-okresu}
     Niech $D_i = \{n \in \mathbb{N}: p_{ii}^{(n)} > 0 \}$.
     Okres stanu $i$ to $d_i=\operatorname{NWD}(D_i)$.
     Jeśli łańcuch jest nieprzywiedlny, to wszystkie stany mają ten
-    sam okres. Oznaczamly wspólną wartość $d = d_i$.
-    Wtedy jeśli $d > 1$ to mówimy że ma okres $d_i$.
+    sam okres. Oznaczamy wspólną wartość $d = d_i$.
+    Wtedy jeśli $d > 1$ to mówimy że łańcuch ma okres $d$.
+    W przeciwnym razie łańcuch jest nieokresowy.
 \end{odpowiedź}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
@@ -176,7 +188,8 @@
 \textbf{Co to znaczy, że łańcuch Markowa jest nieokresowy?}
 \end{pytanie}
 \begin{odpowiedź}
-    Łańcuch Markowa jest nieokresowy, jeżeli $d=1$.
+    Łańcuch Markowa jest nieokresowy, jeżeli $d=1$
+    (zob. odpowiedź \ref{definicja-okresu}).
 \end{odpowiedź}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
@@ -194,6 +207,9 @@
     taki, że $\lim_{n\to \infty}p^{(n)}_{ij} = \pi_j$ dla
     $i = 1, 2, \ldots N$ oraz $\pi$ jest jedynym rozkładem
     stacjonarnym macierzy $\mathbb{P}$.
+
+    Założenia o dodatniości macierzy można równoważnie zastąpić
+    założeniem nieprzywiedlności i nieokresowości.
 \end{odpowiedź}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
@@ -203,7 +219,7 @@
 \textbf{Jak definiujemy czas trafienia łańcucha Markowa w ustalony punkt?}
 \end{pytanie}
 \begin{odpowiedź}
-    Niech $S$-przeliczalny zbiór stanów i $A\subseteq S$.
+    Niech $S$ \pauza przeliczalny zbiór stanów i $A\subseteq S$.
     Definiujemy $T_A=\inf\{n\in \mathbb{N} : X_n\in A\}$,
     gdzie $\inf{\emptyset} = \infty$.\\
     Oznaczenie: $T_{\{y\}} = T_y$.
@@ -227,7 +243,7 @@
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \begin{pytanie}
-\textbf{Jak definiujemy generator macierzy przejścia z czasem ciągłym?}
+\textbf{Jak definiujemy generator macierzy przejścia z~czasem ciągłym?}
 \end{pytanie}
 \begin{odpowiedź}
     $(P(t), t\geq 0)$ jest Markowską macierzą stochastyczną
@@ -238,7 +254,8 @@
         \sum_{j=1}^N g_{ij} = 0, \quad
         P(t)=\exp(tG) \,\, t\geq 0.
     \end{gather}
-    Macierz $G$ jest jedyna i $G$ nazywamy generatorem $P(t)$.
+    Macierz $G$ jest jedyna i nazywamy ją {\em generatorem} $P(t)$.
+    W skrócie: $G$ jest taka, że $P(t) = \exp(tG)$.
 \end{odpowiedź}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
@@ -268,6 +285,7 @@
     gdzie $G$ jest generatorem $P$, czyli $P(t)=\exp(tG)$.
 \end{odpowiedź}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\pagebreak % rozmieszczenie na stronach
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -275,13 +293,13 @@
 \textbf{W jaki sposób opisujemy czysty proces urodzin?}
 \end{pytanie}
 \begin{odpowiedź}
-    Proces sygnałowy: niemalejący w czasie,
-        cadlag, o wartościach całkowitych nieujemnych; \\
-    Proces o przyrostach niezależnych:
-        $X(t_i)-X(s_i)$ dla $i=1,2,\ldots,n$
-        są niezależne dla rozłącznych przedziałów $(s_i,t_i)$; \\
-    Proces o przyrostach jednorodnych w czasie:
-        $X(s+t)-X(s)\overset d = X(t)-X(0)$.
+    \begin{itemize}
+        \item Proces sygnałowy: niemalejący w czasie,
+        càdlàg (zob. \ref{cadlag}), o~wartościach całkowitych nieujemnych;
+        \item Proces o przyrostach niezależnych (zob. \ref{niezależność-przyrostów});
+        \item Proces o przyrostach jednorodnych w czasie:
+            $X(s+t)-X(s)\overset d = X(t)-X(0)$.
+    \end{itemize}
 \end{odpowiedź}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
@@ -291,7 +309,9 @@
 \textbf{Co oznacza eksplozja demograficzna dla czystego procesu urodzin?}
 \end{pytanie}
 \begin{odpowiedź}
-    Dla każdego $t \geq 0 \ \sum\limits_{n=0}^\infty (X(t)=n)=0$ wtedy i tylko wtedy, gdy $\sum\limits_{n=0}^\infty \frac{1}{\lambda_n} < \infty$.
+    Eksplozja demograficzna czystego procesu urodzin to sytuacja,
+    gdzie w skończonym czasie przychodzi nieskończenie wiele
+    sygnałów, czyli $\mathbb{P}(X_t = \infty) > 0$ dla pewnego $t < \infty$.
 \end{odpowiedź}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
@@ -317,10 +337,9 @@
 \textbf{Proszę podać postulaty procesu Poissona.}
 \end{pytanie}
 \begin{odpowiedź}
-    Postulaty procesu Poissona:
     \begin{enumerate}
         \item $X(0) = 0$ p.n.p.
-        \item Niezależność przyrostów (zob. {\bf 20.})
+        \item Niezależność przyrostów (zob. \ref{niezależność-przyrostów})
         \item $X(s+t)-X(s)$ ma rozkład Poissona o średniej $\lambda t$
         \item Trajektorie procesu $X$ są prawostronnie ciągłe
             na $[0, \infty)$, mają lewostronne granice na $(0, \infty )$
@@ -332,9 +351,9 @@
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \begin{pytanie}
-\textbf{Co onacza niezależność przyrostów procesu stochastycznego?}
+\textbf{Co oznacza niezależność przyrostów procesu stochastycznego?}
 \end{pytanie}
-\begin{odpowiedź}
+\begin{odpowiedź} \label{niezależność-przyrostów}
     Niezależność przyrostów:
     $X(t_i)-X(s_i)$ dla $i=1,2,\ldots,n$
     są niezależne dla rozłącznych przedziałów $(s_i,t_i)$.
@@ -347,9 +366,13 @@
 \textbf{Jak definiujemy funkcję charakterystyczną, funkcję tworzącą momenty i transformatę Laplace'a zmiennej losowej?}
 \end{pytanie}
 \begin{odpowiedź}
-    Transformata Lapace'a: Jeżeli $X$ jest zmienną losową, to $\phi (\xi) = \mathbb{E}(\e^{-\xi X}), \ \xi \geq 0$ nazywany jest transformatą Laplace'a zmienej losowej X.
-    Funkcja tworząca momenty: $MGF_X(t) = \mathbb{E} (\e^{tX}), \ t \in \mathbb{R}$. \\
-    Funkcja charakterystyczna: $\varphi_X(t) = \mathbb{E} (\e^{itX}), \ t \in \mathbb{R}$. \\
+    Transformata Laplace'a: Jeżeli $X$ jest zmienną losową,
+    to $\phi(t) = \mathbb{E}(\e^{-tX}), \ t \geq 0$
+    nazywany jest transformatą Laplace'a zmiennej losowej X.
+    Funkcja tworząca momenty: $\operatorname{MGF}_X(t)
+    = \mathbb{E} (\e^{tX}), \ t \in (-\varepsilon, \varepsilon)$. \\
+    Funkcja charakterystyczna: $\varphi_X(t)
+    = \mathbb{E} (\e^{itX}), \ t \in \mathbb{R}$.
 \end{odpowiedź}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
@@ -361,11 +384,13 @@
 \begin{odpowiedź}
     Niech $T_1, T_2, \ldots$ będą iid. $\operatorname{Exp}(\lambda)$.
     Niech $S_n = T_1 + T_2 + \ldots T_n$.
-    Wtedy $N(t) =\sup\{n \geq 0: S_n \leq t\}$ jest procesem Poissona.
+    Wtedy $N(t) =\sup\{n \geq 0: S_n \leq t\}$ jest procesem Poissona
+    z parametrem $\lambda$.
     Omawialiśmy tę konstrukcję zanim zdefiniowaliśmy proces aksjomatycznie.
     Zachodzi $N(t) = n \iff S_n \leq t < S_{n+1}$ oraz $N(t) \geq n \iff S_n < t$.
 \end{odpowiedź}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\pagebreak % rozmieszczenie na stronach
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -387,7 +412,7 @@
 \end{pytanie}
 \begin{odpowiedź}
     Funkcja charakterystyczna: \[
-    \mathbb{E}\e^{i\xi N(t)} = \exp[-\lambda t (1 - \e^{i\xi})]
+    \varphi(\xi) = \mathbb{E}\e^{i\xi N(t)} = \exp[\lambda t (\e^{i\xi} - 1)]
     \]
 \end{odpowiedź}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -415,9 +440,9 @@
 \textbf{Co to znaczy, że prawdopodobieństwo przejścia jest jednorodne w czasie?}
 \end{pytanie}
 \begin{odpowiedź}
-    Prawdopodobieństwo przejścia jest jednorodne w czasie,
+    Prawdopodobieństwo przejścia jest jednorodne w~czasie,
     gdy $T=\mathbb{R}$ oraz
-    \[p_{s, t} (x,A) = p_{0, t-s} (x,A)\]
+    \[p_{s, t} (x,A) = p_{0, t-s} (x,A).\]
 \end{odpowiedź}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
@@ -427,7 +452,7 @@
 \textbf{Co to znaczy, że prawdopodobieństwo przejścia jest jednorodne w przestrzeni?}
 \end{pytanie}
 \begin{odpowiedź}
-    Prawdopodobieństwo przejścia jest jednorodne w przestrzeni,
+    Prawdopodobieństwo przejścia jest jednorodne w~przestrzeni,
     jeżeli ,,przestrzeń'' jest przestrzenią wektorową oraz \[
         (\forall x, y, A) \qquad p_{s, t}(x, A) = p_{s, t}(x + y, A + y).
     \] 
@@ -440,7 +465,13 @@
 \textbf{Proszę podać prawdopodobieństwo przejścia procesu Poissona.}
 \end{pytanie}
 \begin{odpowiedź}
-    % tu zamieść odpowiedź
+    P.p. dla singletonu $\{n + k\}$ :
+    \begin{equation}
+        p_t(n, \{n + k\}) = \mathbb{P}(X(t) = n + k \mid X(0) = n)
+        = \frac {(t\lambda)^k}{k!} \e^{-t\lambda}.
+    \end{equation}
+    Dla dowolnego zbioru $A \subseteq \mathbb{N}_0$, mamy
+    $p_t(n, A) = \sum_{k \in A, k \geq n} p_t(n, \{k\})$.
 \end{odpowiedź}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
@@ -459,9 +490,9 @@
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \begin{pytanie}
-\textbf{Co to znaczy, że trajektorie procesu są cadlag?}
+\textbf{Co to znaczy, że trajektorie procesu są càdlàg?}
 \end{pytanie}
-\begin{odpowiedź}
+\begin{odpowiedź}\label{cadlag}
     càdlàg – prawostronnie ciągłe z lewostronnymi granicami
     (continue a droite, limit a gauche)
 \end{odpowiedź}
@@ -474,11 +505,11 @@
 \end{pytanie}
 \begin{odpowiedź}
     Proces stochastyczny $(X(t))_{t \in T}$ jest stochastycznie
-    ciągły, jeśli $t_n \to t$ implikuje $X(t_n) \overset {\mathbb{P}} X(t)$
+    ciągły, jeśli $t_n \to t$ implikuje $X(t_n) \overset {\mathbb{P}}\to X(t)$
     (zbieżność według prawdopodobieństwa), czyli
     $\mathbb{P}(|X(t_n) - X(t)| > \varepsilon) \to 0$ gdy $t_n \to t$ dla
     dowolnego $\varepsilon > 0$. Proces Poissona jest stochastycznie
-    ciągły (zadanie 6 z listy 7)
+    ciągły (zadanie 6 z listy 7).
 \end{odpowiedź}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
@@ -490,7 +521,7 @@
 \begin{odpowiedź}
 \begin{enumerate}
     \item $W(0) = 0$ p.n.p.
-    \item $W$ ma przyrosty niezależne (dla rozłącznych odcinków $(s_i, t_i)$
+    \item $W$ ma przyrosty niezależne (zob. \ref{niezależność-przyrostów})
     \item $W(t+s) - W(s) \overset D = N(0, t)$
     \item Trajektorie $t \mapsto W(t)$ są ciągłe p.n.p.
 \end{enumerate}
@@ -516,7 +547,7 @@
 \end{pytanie}
 \begin{odpowiedź}
 \[
-    P_t(x, A) = \int_{A - x}\frac 1 {\sqrt{2\pi}} \e^{-y^2/2t} \diff y
+    P_t(x, A) = \int_{A - x}\frac 1 {\sqrt{2\pi t}} \e^{-y^2/2t} \diff y
 \] 
 \end{odpowiedź}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -524,12 +555,14 @@
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \begin{pytanie}
-\textbf{Jak definiujemy warunek Hoeldera ciągłości funkcji? Czy trajektorie Procesu Wienera spełniają ten warunek?}
+\textbf{Jak definiujemy warunek Höldera ciągłości funkcji? Czy trajektorie Procesu Wienera spełniają ten warunek?}
 \end{pytanie}
 \begin{odpowiedź}
     Niech $p \in (0, 1/2)$. Wtedy istnieje zmienna losowa
     $C: \Omega \to [0, \infty)$ taka, że
     $|W_t - W_s| \leq  C|t - s|^p$, dla $0 \leq s, t, \leq 1$.
+    Proces Wienera spełnia ten warunek. Dla funkcji deterministycznych,
+    $C$ musi być stałą. Istnienie $C$ jest definicją ciągłości Höldera.
 \end{odpowiedź}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
@@ -554,7 +587,10 @@
 \textbf{Proszę sformułować prawo iterowanego logarytmu.}
 \end{pytanie}
 \begin{odpowiedź}
-    % tu zamieść odpowiedź
+    Niech $(W_t, t \geq 0)$ będzie procesem Wienera. Wtedy \[
+    \limsup_{t \to 0^+} \frac {W_t} {\sqrt{2t \ln \ln \frac 1 t}}
+    = 0 \quad \text{p.n.p.}
+    \]
 \end{odpowiedź}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
@@ -569,7 +605,7 @@
     uporządkowanym zbiorem indeksów, jest filtracją, jeżeli
     \begin {equation*}
         \left(\forall i, j \in I \right) \left[ i \leqslant j
-            \implies \mathcal F_i \subset \mathcal F_j\right].
+            \implies \mathcal F_i \subseteq \mathcal F_j\right].
     \end {equation*}
 \end{odpowiedź}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -582,10 +618,10 @@
 \begin{odpowiedź}
     Niech $(W_t, t\geq 0)$ będzie procesem Wienera. Niech
     $\mathcal{B}_u = \sigma(W_t, t\leq u)$ dla $u \geq 0$.
-    Niech $\mathcal{B}_{u^+} = \bigcap_{u > t} \mathcal{B_u}$.
-    Prawo 0-1 Blumenthala mówi, że sigma ciało $ \mathcal{B_{0^+}}$
-    jest zdegenerowane, czyli wszystkie jego elementy mają
-    prawdopodobieństwo $0$ lub $1$.
+    Niech $\mathcal{B}_{u^+} = \bigcap_{t > u} \mathcal{B}_t$.
+    Prawo 0-1 Blumenthala mówi, że sigma\dywiz ciało $ \mathcal{B}_{0^+}$
+    jest zdegenerowane, czyli wszystkie zdarzenia $A \in \mathcal{B}_{0^+}$
+    mają prawdopodobieństwo $0$ lub $1$.
 \end{odpowiedź}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
@@ -594,8 +630,17 @@
 \begin{pytanie}
 \textbf{Co to jest martyngał?}
 \end{pytanie}
-\begin{odpowiedź}
-    % tu zamieść odpowiedź
+\begin{odpowiedź} \label {def-martyngału}
+    Rozważmy filtrowaną przestrzeń probabilistyczną z sigma\dywiz ciałem \(
+    \mathcal F_t \) należącym do filtracji i zdefiniowany na niej proces
+    stochastyczny \( \left\{ X_t \right\}_{t \in T} \). Mówimy, że \( X_t
+    \) jest \textit {martyngałem}, jeżeli dla każdego \( t \in T \), \( X_t
+    \) jest \( \mathcal F_t \) mierzalne, ma skończoną wartość oczekiwaną
+    \( \expVal |X_t| < \infty \) oraz
+    \begin {equation*}
+        \left(\forall s, t \in T, s \leq t \right) \expVal (X_t | \mathcal F_s) = X_s.
+        \quad \text{p.n.p.}.
+    \end {equation*}
 \end{odpowiedź}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
@@ -604,8 +649,17 @@
 \begin{pytanie}
 \textbf{Proszę podać przykład martyngału.}
 \end{pytanie}
-\begin{odpowiedź}
-    % tu zamieść odpowiedź
+\begin{odpowiedź} \label {przykład-martyngału}
+    Błądzenie losowe z naturalną filtracją. Ustalmy ciąg niezależnych
+    zmiennych losowych \( \left( X_n \right)_{n \in \mathbf N}, \expVal X_n
+    = x < \infty \) oraz sum częściowych \( S_n \coloneqq \sum_{i \leq n}
+    X_i \), a także sigma\dywiz ciało \( \mathcal F_t \) z filtracji. Wtedy
+    dla \( m < n \) mamy
+    \begin {equation*}
+    \expVal (S_n | \mathcal F_m) = \expVal \left(\left. S_m + \sum_{i=m +
+        1}^n X_i \right| \mathcal F_m \right) = S_m + (n - m)x.
+    \end {equation*}
+    Dla \( x = 0 \), \( S_m \) jest martyngałem.
 \end{odpowiedź}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
@@ -614,8 +668,14 @@
 \begin{pytanie}
 \textbf{Co to jest nadmartyngał?}
 \end{pytanie}
-\begin{odpowiedź}
-    % tu zamieść odpowiedź
+\begin{odpowiedź} \label {def-nadmartyngału}
+    Przyjmijmy założenia takie, jak w odpowiedzi \ref
+    {def-martyngału}. Zmianie ulega jedynie relacja pomiędzy wartością
+    oczekiwaną, a zmienną losową. To znaczy mamy
+    \begin {equation*}
+        \left(\forall s, t \in T, s \leq t \right) \expVal (X_t | \mathcal
+        F_s) \leqslant X_s \quad \text{p.n.p.}
+    \end {equation*}
 \end{odpowiedź}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
@@ -632,6 +692,9 @@
     \] 
     o ile tylko $t \geq s$. Nie jest to martyngał, bo dla $t > s$
     nierówność jest ostra.
+
+    Kolejny przykład jest w odpowiedzi \ref {przykład-martyngału} dla \( x
+    < 0 \).
 \end{odpowiedź}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
@@ -641,9 +704,16 @@
 \textbf{Co to jest podmartyngał?}
 \end{pytanie}
 \begin{odpowiedź}
-    % tu zamieść odpowiedź
+    Przyjmijmy założenia takie, jak w odpowiedzi \ref
+    {def-martyngału}. Zmianie ulega jedynie relacja pomiędzy wartością
+    oczekiwaną, a zmienną losową. To znaczy mamy
+    \begin {equation*}
+        \left(\forall s, t \in T, s \leq t \right) \expVal (X_t | \mathcal
+        F_s) \geqslant X_s\quad \text{p.n.p.}
+    \end {equation*}
 \end{odpowiedź}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\pagebreak % rozmieszczenie na stronach
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -651,7 +721,14 @@
 \textbf{Proszę sformułować nierówność Jensena dla warunkowych wartości oczekiwanych.}
 \end{pytanie}
 \begin{odpowiedź}
-    % tu zamieść odpowiedź
+    Niech $g$ będzie funkcją wypukłą. Niech $X$ oraz $g(X)$ będą
+    zmiennymi losowymi całkowalnymi, czyli takimi, że
+    $\mathbb{E}|X|, \mathbb{E}|g(X)| < \infty$.
+    Wtedy zachodzi nierówność Jensena: \[
+    g(\mathbb{E}[X\mid \mathcal{B}]) \leq \mathbb{E}[g(X) \mid \mathcal{B}]
+    \quad \text{p.n.p.}
+    \]
+    dla dowolnego sigma\dywiz ciała $\mathcal{B}$.
 \end{odpowiedź}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
@@ -661,7 +738,11 @@
 \textbf{Jak definiujemy czas stopu?}
 \end{pytanie}
 \begin{odpowiedź}
-    % tu zamieść odpowiedź
+    Zmienna losowa $\tau : \Omega \to T \cup \{\infty\}$ jest
+    {\emph czasem stopu} względem filtracji
+    $(\mathcal{F}_t, t \in T)$ jeśli \[
+    \forall t \in T \quad \{\tau \leq t\} \in \mathcal{F}_t.
+    \]
 \end{odpowiedź}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
@@ -671,7 +752,17 @@
 \textbf{Proszę sformułować twierdzenie Dooba o stopowaniu.}
 \end{pytanie}
 \begin{odpowiedź}
-    % tu zamieść odpowiedź
+    Niech $(Z_n)$ będzie martyngałem z czasem dyskretnym.
+    Niech $N$ będzie skończonym momentem stopu.
+    Jeśli zachodzi choć jeden z warunków
+    \begin{enumerate}
+        \item $\bar Z_n = Z_{n\land N}$ są wspólnie ograniczone
+        \item $N$ jest ograniczone
+        \item Istnieje $M$ takie, że
+            $\mathbb{E}[|Z_n - Z_{n-1}|\mid \mathcal{F}_n] \leq M$
+            p.n.p. oraz $\mathbb{E}N < \infty$
+    \end{enumerate}
+    wtedy $\mathbb{E}Z_N = \mathbb{E}Z_1$.
 \end{odpowiedź}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
@@ -681,7 +772,12 @@
 \textbf{Proszę sformułować tożsamość Walda.}
 \end{pytanie}
 \begin{odpowiedź}
-    % tu zamieść odpowiedź
+    Niech $X_i$ będą iid., oraz $\mathbb{E}|X_1| < \infty$.
+    Niech $N$ będzie czasem stopu takim, że $\mathbb{E}N < \infty$.
+    Wtedy \[
+    \mathbb{E}\left( \sum_{i = i}^N X_i \right)=
+    \left(\mathbb{E}X_1 \right)\cdot \left(\mathbb{E}N \right)
+    \]
 \end{odpowiedź}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
