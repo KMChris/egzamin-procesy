@@ -36,7 +36,7 @@
 \DeclareMathOperator{\Rea}{Re}
 % Część urojona niepisana frakturą, `\Ima` od Imaginary
 \DeclareMathOperator{\Ima}{Im}
-\DeclareMathOperator {\expVal} {\mathbf E}
+\DeclareMathOperator {\expVal} {\mathbb{E}}
 
 \begin{document}
 %\maketitle
@@ -51,7 +51,7 @@ Co to jest proces stochastyczny?
     przestrzeni probabilistycznej. To znaczy \[
     \forall t \in I \quad X_t : \Omega \to \mathbb{R}
     \]
-    Gdzie $(\Omega, \mathcal{F}, \mathbb{P})$ jest pewną ustaloną przestrzenią
+    gdzie $(\Omega, \mathcal{F}, \mathbb{P})$ jest pewną ustaloną przestrzenią
     probabilistyczną.
 \end{odpowiedź}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -66,6 +66,7 @@ Co to jest rozkład wielowymiarowy procesu stochastycznego?
     to rozkłady wektorów $(X_{t_1}, X_{t_2}, \ldots, X_{t_n})$ 
     dla dowolnego $n \in \mathbb{N}$ oraz $t_1, t_2, \ldots t_n \in T$,
     $t_1 < t_2 < \ldots t_n$.
+    Czyli rozkłady łączne skończenie wielu zmiennych tworzących proces.
     W~szczególności, jeśli $T$ jest nieskończony, żaden
     rozkład skończenie wymiarowy nie jest rozkładem łącznym
     całego procesu.
@@ -82,7 +83,7 @@ Jak definiuje się własność Markowa procesu stochastycznego?
     \mathbb{P}(X_{n+1}=x_{n+1}\mid X_n=x_n,\ldots ,X_0=x_0)\\
     = \mathbb{P}(X_{n+1}=x_{n+1}\mid X_n=x_n),
     $
-    Gdzie $n \in \mathbb{N}$ i $x_0, x_1, \ldots, x_{n+1} \in S$.
+    gdzie $n \in \mathbb{N}$ i~$x_0, x_1, \ldots, x_{n+1} \in S$.
     {\bf Nieważne jak gdzieś dotarliśmy, ważne, że tam jesteśmy.}
 \end{odpowiedź}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -93,8 +94,7 @@ Jak definiuje się własność Markowa procesu stochastycznego?
 Jakie postulaty spełnia macierz przejścia łańcucha Markowa?
 \end{pytanie}
 \begin{odpowiedź}
-    Stochastyczna macierz przejścia: $P = [p(x,y)]_{x, y\in S}$\\
-    Własności:
+    Stochastyczna macierz przejścia: $P = [p(x,y)]_{x, y\in S}$
     \begin{enumerate}
         \item $p(x, y) \geq 0, \quad \forall x, y \in S$
         \item $\sum_{y} p(x, y) = 1, \quad \forall x \in S$
@@ -111,6 +111,8 @@ Co to znaczy, że macierz jest podwójnie stochastyczna? Proszę podać przykła
     Macierz podwójnie stochastyczna to taka macierz,
     której wyrazy są nieujemne, oraz
     wiersze i kolumny sumują się do 1.
+    Równoważnie macierz stochastyczna,
+    której transpozycja jest stochastyczna.
     Na przykład macierz identycznościowa.
 \end{odpowiedź}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -132,12 +134,13 @@ Co to znaczy, że łańcuch Markowa jest nieprzywiedlny?
 \begin{pytanie}
 Jak definiujemy okres łańcucha Markowa?
 \end{pytanie}
-\begin{odpowiedź}
+\begin{odpowiedź}\label{definicja-okresu}
     Niech $D_i = \{n \in \mathbb{N}: p_{ii}^{(n)} > 0 \}$.
     Okres stanu $i$ to $d_i=\operatorname{NWD}(D_i)$.
     Jeśli łańcuch jest nieprzywiedlny, to wszystkie stany mają ten
-    sam okres. Oznaczamly wspólną wartość $d = d_i$.
-    Wtedy jeśli $d > 1$ to mówimy że ma okres $d_i$.
+    sam okres. Oznaczamy wspólną wartość $d = d_i$.
+    Wtedy jeśli $d > 1$ to mówimy że łańcuch ma okres $d$.
+    W przeciwnym razie łańcuch jest nieokresowy.
 \end{odpowiedź}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
@@ -160,7 +163,8 @@ Co to jest rozkład stacjonarny dla łańcucha Markowa?
 Co to znaczy, że łańcuch Markowa jest nieokresowy?
 \end{pytanie}
 \begin{odpowiedź}
-    Łańcuch Markowa jest nieokresowy, jeżeli $d=1$.
+    Łańcuch Markowa jest nieokresowy, jeżeli $d=1$
+    (zob. odpowiedź \ref{definicja-okresu}).
 \end{odpowiedź}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
@@ -178,6 +182,9 @@ Proszę sformułować twierdzenie o zbieżności łańcuchów Markowa ze skończ
     taki, że $\lim_{n\to \infty}p^{(n)}_{ij} = \pi_j$ dla
     $i = 1, 2, \ldots N$ oraz $\pi$ jest jedynym rozkładem
     stacjonarnym macierzy $\mathbb{P}$.
+
+    Założenia o dodatniości macierzy można równoważnie zastąpić
+    założeniem nieprzywiedlności i nieokresowości.
 \end{odpowiedź}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
@@ -187,7 +194,7 @@ Proszę sformułować twierdzenie o zbieżności łańcuchów Markowa ze skończ
 Jak definiujemy czas trafienia łańcucha Markowa w ustalony punkt?
 \end{pytanie}
 \begin{odpowiedź}
-    Niech $S$-przeliczalny zbiór stanów i $A\subseteq S$.
+    Niech $S$ \pauza przeliczalny zbiór stanów i $A\subseteq S$.
     Definiujemy $T_A=\inf\{n\in \mathbb{N} : X_n\in A\}$,
     gdzie $\inf{\emptyset} = \infty$.\\
     Oznaczenie: $T_{\{y\}} = T_y$.
@@ -212,7 +219,7 @@ Co oznacza tranzytywność i rekurencyjność łańcucha Markowa o przeliczalnym
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \begin{pytanie}
-Jak definiujemy generator macierzy przejścia z czasem ciągłym?
+Jak definiujemy generator macierzy przejścia z~czasem ciągłym?
 \end{pytanie}
 \begin{odpowiedź}
     $(P(t), t\geq 0)$ jest Markowską macierzą stochastyczną
@@ -223,7 +230,8 @@ Jak definiujemy generator macierzy przejścia z czasem ciągłym?
         \sum_{j=1}^N g_{ij} = 0, \quad
         P(t)=\exp(tG) \,\, t\geq 0.
     \end{gather}
-    Macierz $G$ jest jedyna i $G$ nazywamy generatorem $P(t)$.
+    Macierz $G$ jest jedyna i nazywamy ją {\em generatorem} $P(t)$.
+    W skrócie: $G$ jest taka, że $P(t) = \exp(tG)$.
 \end{odpowiedź}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
@@ -253,6 +261,7 @@ Jakie równanie różniczkowe spełnia macierz stochastyczna z czasem ciągłym?
     gdzie $G$ jest generatorem $P$, czyli $P(t)=\exp(tG)$.
 \end{odpowiedź}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\pagebreak % rozmieszczenie na stronach
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -260,13 +269,13 @@ Jakie równanie różniczkowe spełnia macierz stochastyczna z czasem ciągłym?
 W jaki sposób opisujemy czysty proces urodzin?
 \end{pytanie}
 \begin{odpowiedź}
-    Proces sygnałowy: niemalejący w czasie,
-        cadlag, o wartościach całkowitych nieujemnych; \\
-    Proces o przyrostach niezależnych:
-        $X(t_i)-X(s_i)$ dla $i=1,2,\ldots,n$
-        są niezależne dla rozłącznych przedziałów $(s_i,t_i)$; \\
-    Proces o przyrostach jednorodnych w czasie:
-        $X(s+t)-X(s)\overset d = X(t)-X(0)$.
+    \begin{itemize}
+        \item Proces sygnałowy: niemalejący w czasie,
+        càdlàg (zob. \ref{cadlag}), o~wartościach całkowitych nieujemnych;
+        \item Proces o przyrostach niezależnych (zob. \ref{niezależność-przyrostów});
+        \item Proces o przyrostach jednorodnych w czasie:
+            $X(s+t)-X(s)\overset d = X(t)-X(0)$.
+    \end{itemize}
 \end{odpowiedź}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
@@ -276,7 +285,9 @@ W jaki sposób opisujemy czysty proces urodzin?
 Co oznacza eksplozja demograficzna dla czystego procesu urodzin?
 \end{pytanie}
 \begin{odpowiedź}
-    Dla każdego $t \geq 0 \ \sum\limits_{n=0}^\infty (X(t)=n)=0$ wtedy i tylko wtedy, gdy $\sum\limits_{n=0}^\infty \frac{1}{\lambda_n} < \infty$.
+    Eksplozja demograficzna czystego procesu urodzin to sytuacja,
+    gdzie w skończonym czasie przychodzi nieskończenie wiele
+    sygnałów, czyli $\mathbb{P}(X_t = \infty) > 0$ dla pewnego $t < \infty$.
 \end{odpowiedź}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
@@ -302,10 +313,9 @@ Proszę sformułować twierdzenie o braku eksplozji dla czystego procesu urodzin
 Proszę podać postulaty procesu Poissona.
 \end{pytanie}
 \begin{odpowiedź}
-    Postulaty procesu Poissona:
     \begin{enumerate}
         \item $X(0) = 0$ p.n.p.
-        \item Niezależność przyrostów (zob. {\bf 20.})
+        \item Niezależność przyrostów (zob. \ref{niezależność-przyrostów})
         \item $X(s+t)-X(s)$ ma rozkład Poissona o średniej $\lambda t$
         \item Trajektorie procesu $X$ są prawostronnie ciągłe
             na $[0, \infty)$, mają lewostronne granice na $(0, \infty )$
@@ -317,9 +327,9 @@ Proszę podać postulaty procesu Poissona.
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \begin{pytanie}
-Co onacza niezależność przyrostów procesu stochastycznego?
+Co oznacza niezależność przyrostów procesu stochastycznego?
 \end{pytanie}
-\begin{odpowiedź}
+\begin{odpowiedź} \label{niezależność-przyrostów}
     Niezależność przyrostów:
     $X(t_i)-X(s_i)$ dla $i=1,2,\ldots,n$
     są niezależne dla rozłącznych przedziałów $(s_i,t_i)$.
@@ -332,9 +342,13 @@ Co onacza niezależność przyrostów procesu stochastycznego?
 Jak definiujemy funkcję charakterystyczną, funkcję tworzącą momenty i transformatę Laplace'a zmiennej losowej?
 \end{pytanie}
 \begin{odpowiedź}
-    Transformata Lapace'a: Jeżeli $X$ jest zmienną losową, to $\phi (\xi) = \mathbb{E}(\e^{-\xi X}), \ \xi \geq 0$ nazywany jest transformatą Laplace'a zmienej losowej X.
-    Funkcja tworząca momenty: $MGF_X(t) = \mathbb{E} (\e^{tX}), \ t \in \mathbb{R}$. \\
-    Funkcja charakterystyczna: $\varphi_X(t) = \mathbb{E} (\e^{itX}), \ t \in \mathbb{R}$. \\
+    Transformata Laplace'a: Jeżeli $X$ jest zmienną losową,
+    to $\phi(t) = \mathbb{E}(\e^{-tX}), \ t \geq 0$
+    nazywany jest transformatą Laplace'a zmiennej losowej X.
+    Funkcja tworząca momenty: $\operatorname{MGF}_X(t)
+    = \mathbb{E} (\e^{tX}), \ t \in (-\varepsilon, \varepsilon)$. \\
+    Funkcja charakterystyczna: $\varphi_X(t)
+    = \mathbb{E} (\e^{itX}), \ t \in \mathbb{R}$.
 \end{odpowiedź}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
@@ -346,11 +360,13 @@ Czy zna Pani/Pan jakąś konstrukcję procesu Poissona? Proszę o niej opowiedzi
 \begin{odpowiedź}
     Niech $T_1, T_2, \ldots$ będą iid. $\operatorname{Exp}(\lambda)$.
     Niech $S_n = T_1 + T_2 + \ldots T_n$.
-    Wtedy $N(t) =\sup\{n \geq 0: S_n \leq t\}$ jest procesem Poissona.
+    Wtedy $N(t) =\sup\{n \geq 0: S_n \leq t\}$ jest procesem Poissona
+    z parametrem $\lambda$.
     Omawialiśmy tę konstrukcję zanim zdefiniowaliśmy proces aksjomatycznie.
     Zachodzi $N(t) = n \iff S_n \leq t < S_{n+1}$ oraz $N(t) \geq n \iff S_n < t$.
 \end{odpowiedź}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\pagebreak % rozmieszczenie na stronach
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -372,7 +388,7 @@ Proszę podać funkcję charakterystyczną rozkładu jednowymiarowego procesu Po
 \end{pytanie}
 \begin{odpowiedź}
     Funkcja charakterystyczna: \[
-    \mathbb{E}\e^{i\xi N(t)} = \exp[-\lambda t (1 - \e^{i\xi})]
+    \varphi(\xi) = \mathbb{E}\e^{i\xi N(t)} = \exp[\lambda t (\e^{i\xi} - 1)]
     \]
 \end{odpowiedź}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -400,9 +416,9 @@ Jakie postulaty spełnia prawdopodobieństwo przejścia?
 Co to znaczy, że prawdopodobieństwo przejścia jest jednorodne w czasie?
 \end{pytanie}
 \begin{odpowiedź}
-    Prawdopodobieństwo przejścia jest jednorodne w czasie,
+    Prawdopodobieństwo przejścia jest jednorodne w~czasie,
     gdy $T=\mathbb{R}$ oraz
-    \[p_{s, t} (x,A) = p_{0, t-s} (x,A)\]
+    \[p_{s, t} (x,A) = p_{0, t-s} (x,A).\]
 \end{odpowiedź}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
@@ -412,7 +428,7 @@ Co to znaczy, że prawdopodobieństwo przejścia jest jednorodne w czasie?
 Co to znaczy, że prawdopodobieństwo przejścia jest jednorodne w przestrzeni?
 \end{pytanie}
 \begin{odpowiedź}
-    Prawdopodobieństwo przejścia jest jednorodne w przestrzeni,
+    Prawdopodobieństwo przejścia jest jednorodne w~przestrzeni,
     jeżeli ,,przestrzeń'' jest przestrzenią wektorową oraz \[
         (\forall x, y, A) \qquad p_{s, t}(x, A) = p_{s, t}(x + y, A + y).
     \] 
@@ -428,7 +444,7 @@ Proszę podać prawdopodobieństwo przejścia procesu Poissona.
     P.p. dla singletonu $\{n + k\}$ :
     \begin{equation}
         p_t(n, \{n + k\}) = \mathbb{P}(X(t) = n + k \mid X(0) = n)
-        = \frac {t^k}{k!} \e^{-t}.
+        = \frac {(t\lambda)^k}{k!} \e^{-t\lambda}.
     \end{equation}
     Dla dowolnego zbioru $A \subseteq \mathbb{N}_0$, mamy
     $p_t(n, A) = \sum_{k \in A, k \geq n} p_t(n, \{k\})$.
@@ -450,9 +466,9 @@ Co to jest trajektoria procesu stochastycznego?
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \begin{pytanie}
-Co to znaczy, że trajektorie procesu są cadlag?
+Co to znaczy, że trajektorie procesu są càdlàg?
 \end{pytanie}
-\begin{odpowiedź}
+\begin{odpowiedź}\label{cadlag}
     càdlàg – prawostronnie ciągłe z lewostronnymi granicami
     (continue a droite, limit a gauche)
 \end{odpowiedź}
@@ -465,11 +481,11 @@ Co oznacza ciągłość stochastyczna procesu? Czy proces Poissona jest stochast
 \end{pytanie}
 \begin{odpowiedź}
     Proces stochastyczny $(X(t))_{t \in T}$ jest stochastycznie
-    ciągły, jeśli $t_n \to t$ implikuje $X(t_n) \overset {\mathbb{P}} X(t)$
+    ciągły, jeśli $t_n \to t$ implikuje $X(t_n) \overset {\mathbb{P}}\to X(t)$
     (zbieżność według prawdopodobieństwa), czyli
     $\mathbb{P}(|X(t_n) - X(t)| > \varepsilon) \to 0$ gdy $t_n \to t$ dla
     dowolnego $\varepsilon > 0$. Proces Poissona jest stochastycznie
-    ciągły (zadanie 6 z listy 7)
+    ciągły (zadanie 6 z listy 7).
 \end{odpowiedź}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
@@ -481,7 +497,7 @@ Proszę podać postulaty procesu Wienera.
 \begin{odpowiedź}
 \begin{enumerate}
     \item $W(0) = 0$ p.n.p.
-    \item $W$ ma przyrosty niezależne (dla rozłącznych odcinków $(s_i, t_i)$
+    \item $W$ ma przyrosty niezależne (zob. \ref{niezależność-przyrostów})
     \item $W(t+s) - W(s) \overset D = N(0, t)$
     \item Trajektorie $t \mapsto W(t)$ są ciągłe p.n.p.
 \end{enumerate}
@@ -515,12 +531,14 @@ Proszę podać prawdopodobieństwo przejścia procesu Wienera.
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \begin{pytanie}
-Jak definiujemy warunek Hoeldera ciągłości funkcji? Czy trajektorie Procesu Wienera spełniają ten warunek?
+Jak definiujemy warunek Höldera ciągłości funkcji? Czy trajektorie Procesu Wienera spełniają ten warunek?
 \end{pytanie}
 \begin{odpowiedź}
     Niech $p \in (0, 1/2)$. Wtedy istnieje zmienna losowa
     $C: \Omega \to [0, \infty)$ taka, że
     $|W_t - W_s| \leq  C|t - s|^p$, dla $0 \leq s, t, \leq 1$.
+    Proces Wienera spełnia ten warunek. Dla funkcji deterministycznych,
+    $C$ musi być stałą. Istnienie $C$ jest definicją ciągłości Höldera.
 \end{odpowiedź}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
@@ -563,7 +581,7 @@ Co to jest filtracja?
     uporządkowanym zbiorem indeksów, jest filtracją, jeżeli
     \begin {equation*}
         \left(\forall i, j \in I \right) \left[ i \leqslant j
-            \implies \mathcal F_i \subset \mathcal F_j\right].
+            \implies \mathcal F_i \subseteq \mathcal F_j\right].
     \end {equation*}
 \end{odpowiedź}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -576,8 +594,8 @@ Proszę sformułować prawo 0-1 Blumenthala dla procesu Wienera.
 \begin{odpowiedź}
     Niech $(W_t, t\geq 0)$ będzie procesem Wienera. Niech
     $\mathcal{B}_u = \sigma(W_t, t\leq u)$ dla $u \geq 0$.
-    Niech $\mathcal{B}_{u^+} = \bigcap_{u > t} \mathcal{B}_u$.
-    Prawo 0-1 Blumenthala mówi, że sigma ciało $ \mathcal{B}_{0^+}$
+    Niech $\mathcal{B}_{u^+} = \bigcap_{t > u} \mathcal{B}_t$.
+    Prawo 0-1 Blumenthala mówi, że sigma\dywiz ciało $ \mathcal{B}_{0^+}$
     jest zdegenerowane, czyli wszystkie zdarzenia $A \in \mathcal{B}_{0^+}$
     mają prawdopodobieństwo $0$ lub $1$.
 \end{odpowiedź}
@@ -597,6 +615,7 @@ Co to jest martyngał?
     \( \expVal |X_t| < \infty \) oraz
     \begin {equation*}
         \left(\forall s, t \in T, s \leq t \right) \expVal (X_t | \mathcal F_s) = X_s.
+        \quad \text{p.n.p.}.
     \end {equation*}
 \end{odpowiedź}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -631,7 +650,7 @@ Co to jest nadmartyngał?
     oczekiwaną, a zmienną losową. To znaczy mamy
     \begin {equation*}
         \left(\forall s, t \in T, s \leq t \right) \expVal (X_t | \mathcal
-        F_s) \leqslant X_s.
+        F_s) \leqslant X_s \quad \text{p.n.p.}
     \end {equation*}
 \end{odpowiedź}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -666,10 +685,11 @@ Co to jest podmartyngał?
     oczekiwaną, a zmienną losową. To znaczy mamy
     \begin {equation*}
         \left(\forall s, t \in T, s \leq t \right) \expVal (X_t | \mathcal
-        F_s) \geqslant X_s.
+        F_s) \geqslant X_s\quad \text{p.n.p.}
     \end {equation*}
 \end{odpowiedź}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\pagebreak % rozmieszczenie na stronach
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -678,7 +698,8 @@ Proszę sformułować nierówność Jensena dla warunkowych wartości oczekiwany
 \end{pytanie}
 \begin{odpowiedź}
     Niech $g$ będzie funkcją wypukłą. Niech $X$ oraz $g(X)$ będą
-    zmiennymi losowymi takimi, że $\mathbb{E}|X|, \mathbb{E}|g(X)| < \infty$.
+    zmiennymi losowymi całkowalnymi, czyli takimi, że
+    $\mathbb{E}|X|, \mathbb{E}|g(X)| < \infty$.
     Wtedy zachodzi nierówność Jensena: \[
     g(\mathbb{E}[X\mid \mathcal{B}]) \leq \mathbb{E}[g(X) \mid \mathcal{B}]
     \quad \text{p.n.p.}
@@ -714,7 +735,7 @@ Proszę sformułować twierdzenie Dooba o stopowaniu.
         \item $\bar Z_n = Z_{n\land N}$ są wspólnie ograniczone
         \item $N$ jest ograniczone
         \item Istnieje $M$ takie, że
-            $\mathbb{E}[|Z_n - Z_{n-1}\mid \mathcal{F}_n] \leq M$
+            $\mathbb{E}[|Z_n - Z_{n-1}|\mid \mathcal{F}_n] \leq M$
             p.n.p. oraz $\mathbb{E}N < \infty$
     \end{enumerate}
     wtedy $\mathbb{E}Z_N = \mathbb{E}Z_1$.
