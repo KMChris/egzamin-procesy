@@ -501,7 +501,7 @@ Proszę podać prawdopodobieństwo przejścia procesu Wienera.
 \end{pytanie}
 \begin{odpowiedź}
 \[
-    P_t(x, A) = \int_{A - x}\frac 1 {\sqrt{2\pi}} \e^{-y^2/2t} \diff y
+    P_t(x, A) = \int_{A - x}\frac 1 {\sqrt{2\pi t}} \e^{-y^2/2t} \diff y
 \] 
 \end{odpowiedź}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -668,7 +668,13 @@ Co to jest podmartyngał?
 Proszę sformułować nierówność Jensena dla warunkowych wartości oczekiwanych.
 \end{pytanie}
 \begin{odpowiedź}
-    % tu zamieść odpowiedź
+    Niech $g$ będzie funkcją wypukłą. Niech $X$ oraz $g(X)$ będą
+    zmiennymi losowymi takimi, że $\mathbb{E}|X|, \mathbb{E}|g(X)| < \infty$.
+    Wtedy zachodzi nierówność Jensena: \[
+    g(\mathbb{E}[X\mid \mathcal{B}]) \leq \mathbb{E}[g(X) \mid \mathcal{B}]
+    \quad \text{p.n.p.}
+    \] 
+    dla dowolnego sigma\dywiz ciała $\mathcal{B}$.
 \end{odpowiedź}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
@@ -678,7 +684,11 @@ Proszę sformułować nierówność Jensena dla warunkowych wartości oczekiwany
 Jak definiujemy czas stopu?
 \end{pytanie}
 \begin{odpowiedź}
-    % tu zamieść odpowiedź
+    Zmienna losowa $\tau : \Omega \to T \cup \{\infty\}$ jest
+    {\emph czasem stopu} względem filtracji
+    $(\mathcal{F}_t, t \in T)$ jeśli \[
+    \forall t \in T \quad \{\tau \leq t\} \in \mathcal{F}_t.
+    \] 
 \end{odpowiedź}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
@@ -688,7 +698,17 @@ Jak definiujemy czas stopu?
 Proszę sformułować twierdzenie Dooba o stopowaniu.
 \end{pytanie}
 \begin{odpowiedź}
-    % tu zamieść odpowiedź
+    Niech $(Z_n)$ będzie martyngałem z czasem dyskretnym.
+    Niech $N$ będzie skończonym momentem stopu.
+    Jeśli zachodzi choć jeden z warunków
+    \begin{enumerate}
+        \item $\bar Z_n = Z_{n\land N}$ są wspólnie ograniczone
+        \item $N$ jest ograniczone
+        \item Istnieje $M$ takie, że
+            $\mathbb{E}[|Z_n - Z_{n-1}\mid \mathcal{F}_n] \leq M$
+            p.n.p. oraz $\mathbb{E}N < \infty$
+    \end{enumerate}
+    wtedy $\mathbb{E}Z_N = \mathbb{E}Z_1$.
 \end{odpowiedź}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
@@ -698,7 +718,12 @@ Proszę sformułować twierdzenie Dooba o stopowaniu.
 Proszę sformułować tożsamość Walda.
 \end{pytanie}
 \begin{odpowiedź}
-    % tu zamieść odpowiedź
+    Niech $X_i$ będą iid., oraz $\mathbb{E}|X_1| < \infty$.
+    Niech $N$ będzie czasem stopu takim, że $\mathbb{E}N < \infty$.
+    Wtedy \[
+    \mathbb{E}\left( \sum_{i = i}^N X_i \right)=
+    \left(\mathbb{E}X_1 \right)\cdot \left(\mathbb{E}N \right)
+    \] 
 \end{odpowiedź}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
