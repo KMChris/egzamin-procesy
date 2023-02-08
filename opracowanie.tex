@@ -26,6 +26,7 @@
 \usepackage{lmodern,enumitem,multicol,paracol,cancel,float}
 \usepackage{mathtools,amsthm,amssymb,icomma,upgreek,xfrac}
 \usepackage[hidelinks,breaklinks,pdfusetitle,pdfdisplaydoctitle]{hyperref}
+\renewcommand{\familydefault}{\sfdefault}
 \mathtoolsset{showonlyrefs,mathic}
 \title{Pytania na egzamin z procesów stochastycznych}
 \date{\today}
@@ -44,8 +45,7 @@
 \newtheorem{pytanie}{}
 \theoremstyle{break}
 \newcounter {odpowiedz}
-%\newenvironment{odpowiedź}{\refstepcounter {odpowiedz}}{\vspace{0.3em}\hrule}
-\newenvironment{odpowiedź}{\vspace{-0.7em}}{\vspace{0.3em}\hrule}
+\newenvironment{odpowiedź}{\refstepcounter {odpowiedz}\vspace{-0.7em}}{\vspace{0.3em}\hrule}
 
 
 %% STAŁE
@@ -239,7 +239,7 @@
     a chwilowym (tranzytywnym), jeżeli $\rho_{x,x} < 1$.
 \end{odpowiedź}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-
+\pagebreak
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \begin{pytanie}
