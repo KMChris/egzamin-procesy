@@ -78,7 +78,7 @@ Co to jest rozkład wielowymiarowy procesu stochastycznego?
 \begin{pytanie}
 Jak definiuje się własność Markowa procesu stochastycznego?
 \end{pytanie}
-\begin{odpowiedź}
+\begin{odpowiedź}\label{markow}
     Proces stochastyczny $X$ jest procesem Markowa, jeśli $
     \mathbb{P}(X_{n+1}=x_{n+1}\mid X_n=x_n,\ldots ,X_0=x_0)\\
     = \mathbb{P}(X_{n+1}=x_{n+1}\mid X_n=x_n),
@@ -269,12 +269,16 @@ Jakie równanie różniczkowe spełnia macierz stochastyczna z czasem ciągłym?
 W jaki sposób opisujemy czysty proces urodzin?
 \end{pytanie}
 \begin{odpowiedź}
+    Dane są $\lambda_0, \lambda_1, \lambda_2, \ldots \geq 0$
     \begin{itemize}
         \item Proces sygnałowy: niemalejący w czasie,
         càdlàg (zob. \ref{cadlag}), o~wartościach całkowitych nieujemnych;
-        \item Proces o przyrostach niezależnych (zob. \ref{niezależność-przyrostów});
         \item Proces o przyrostach jednorodnych w czasie:
             $X(s+t)-X(s)\overset d = X(t)-X(0)$.
+        \item Spełnia własność markowa dla czasu ciągłego (jak w \ref{markow},
+            ale dla dowolnych czasów, nie tylko całkowitych);
+        \item $\mathbb{P}(X(t + h) = n+1\mid X(t) = n) = \lambda_n h + o(h),
+            \mathbb{P}(X(t+h) = n+2 \mid X(t) = n) = o(h)$ gdy $h \to 0^+$.
     \end{itemize}
 \end{odpowiedź}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
